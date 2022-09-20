@@ -1,0 +1,351 @@
+body {
+  font: 15px/25px $defaultFont;
+  color: $defaultColorText;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    width: 90px;
+    height: 60px;
+    flex-shrink: 0;
+    margin: $defaultIndent 10px $defaultIndent 0;
+
+    &__link {
+      font-family: $titleFont;
+      font-size: 17px;
+      color: $defaultColorText;
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+        color: $defaultColorCursorHover;
+        //   caret-color: $defaultColorCursorHover;
+        //    cursor: url("myimage.png"), pointer;
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 1160px;
+  width: 100%;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu {
+  font-family: $defaultFont, 'Arial', sans-serif;
+  font-size: $fontDefaultSize;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    width: 55px;
+    padding: 5px 10px;
+    margin: $defaultIndent 5px;
+    text-align: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $defaultColorText;
+    font-size: $fontDefaultSize;
+
+    &:hover {
+      font-family: $titleFontSemiBold, 'Arial', sans-serif;
+      text-decoration: underline;
+    }
+  }
+}
+
+.page-title {
+  font-family: $titleFontSemiBold, 'Arial', sans-serif;
+  font-size: $fontTitleSize;
+  line-height: 39px;
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 45px;
+    height: 8px;
+    border: 1px solid $defaultColorText;
+    border-top: none;
+    position: absolute;
+    top: 40px;
+  }
+}
+
+.site-search {
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 60px;
+  text-align: right;
+
+  &--label {
+    font: $fontDefaultSize/25px $defaultFont, 'Arial', sans-serif;
+    color: $defaultColorText;
+    position: relative;
+  }
+
+  &--field {
+    width: 320px;
+    height: 45px;
+    border: 1px solid $defaultColorText;
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+
+  &--button {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 11px;
+    border: none;
+    background-color: $defaultFill;
+    background-image: url("../../images/icon/icon-search.svg");
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.blog {
+  width: 100%;
+
+  .post {
+    width: 100%;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    min-height: 380px;
+    background-color: $defaultColorBgPost;
+    display: flex;
+    text-align: left;
+
+    &__type {
+      width: 84px;
+      height: 78px;
+      border: 3px solid $white;
+      border-radius: 5px;
+      margin-right: -40px;
+      float: right;
+      text-align: center;
+
+      &-img {
+        position: relative;
+        top: calc(50% - 21px);
+      }
+    }
+
+    &__media {
+      max-width: 46%;
+      min-width: 46%;
+      width: 46%;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 380px;
+      max-height: 380px;
+
+      &-img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &--video {
+        position: relative;
+
+        &::before {
+          content: '';
+          width: 72px;
+          height: 72px;
+          position: absolute;
+          top: calc(50% - 36px);
+          left: calc(50% - 36px);
+          background-image: url("../../images/icon/icon-play.svg");
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &--text {
+        display: none;
+
+        & + .post__article {
+          padding: 0 $defaultIndent;
+
+          .post__context {
+            width: 90%;
+          }
+        }
+      }
+    }
+
+    &__article {
+      border-radius: 5px;
+      padding: 0 40px;
+    }
+
+    &__information {
+      display: flex;
+      position: relative;
+      margin-top: $defaultIndent;
+
+      &__avatar {
+        width: 52px;
+        height: 52px;
+        margin-right: $defaultIndent/2;
+      }
+
+      &--details {
+        display: flex;
+        color: $informationDetailsBlog;
+      }
+
+      &__duration {
+        position: relative;
+        margin: 0 20px;
+
+        &:before,
+        &:after {
+          content: '';
+          width: 2px;
+          height: 2px;
+          border: 1px solid $informationDetailsBlog;
+          background: $informationDetailsBlog;
+          border-radius: 50%;
+          position: absolute;
+          top: 10px;
+        }
+
+        &:before {
+          left: -12px;
+        }
+
+        &:after {
+          right: -12px;
+        }
+      }
+
+      &__name {
+        width: 100%;
+        font-weight: 500;
+        font-size: 17px;
+        font-family: $defaultFontTitle;
+        text-align: left;
+      }
+
+      &__comment {
+        position: relative;
+        padding-left: 18px;
+        margin-right: 10px;
+
+        &:before {
+          content: '';
+          width: 14px;
+          height: 14px;
+          position: absolute;
+          left: 0;
+          top: 5px;
+          background-image: url("../../images/icon/icon-comment.svg");
+        }
+      }
+    }
+
+    &__title {
+      font: 20px/26px $defaultFontTitle;
+      margin-bottom: 20px;
+      margin-top: 48px;
+    }
+
+    &__context {
+      min-width: 40%;
+      margin-bottom: 30px;
+    }
+
+    &__audio-file {
+      height: 37px;
+      zoom: 0.735;
+    }
+  }
+
+  &__read-more {
+    text-align: center;
+
+    .read-more {
+      color: $defaultButtonHoverText;
+      background-color: $defaultButtonHoverFill;
+
+      &:hover {
+        cursor: pointer;
+        color: $defaultButtonHoverFill;
+        background-color: $defaultButtonHoverText;
+      }
+    }
+  }
+}
+
+.read-more {
+  width: 120px;
+  height: 45px;
+  border: 1px solid $defaultColorText;
+  border-radius: 5px;
+  margin-bottom: 40px;
+
+  &:hover {
+    cursor: pointer;
+    color: $defaultButtonHoverText;
+    background-color: $defaultButtonHoverFill;
+  }
+}
+
+.footer {
+  background-color: $footerBgFill;
+  border: 1px solid #ccc;
+
+  &__container {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__social-block__item {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin-right: $defaultIndent;
+
+    &--facebook {
+      background: url("../../images/icon/icon-facebook.svg") no-repeat;
+    }
+
+    &--instagram {
+      background: url("../../images/icon/icon-instagram.svg") no-repeat;
+    }
+
+    &--dribble {
+      background: url("../../images/icon/icon-dribble.svg") no-repeat;
+    }
+  }
+}

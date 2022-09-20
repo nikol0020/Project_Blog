@@ -1,0 +1,20 @@
+@mixin social-web {
+  &__social-block__item {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin-right: $defaultIndent;
+
+    &--facebook {
+      background: url("../../images/icon/icon-facebook.svg") no-repeat;
+    }
+
+    &--instagram {
+      background: url("../../images/icon/icon-instagram.svg") no-repeat;
+    }
+
+    &--dribble {
+      background: url("../../images/icon/icon-dribble.svg") no-repeat;
+    }
+  }
+}
