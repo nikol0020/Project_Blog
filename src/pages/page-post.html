@@ -52,11 +52,17 @@
                     <div class="post__information__name">
                         Sarah Healy
                     </div>
-                    <div class="post__information--details">
-                        <div class="post__information__date">02 oct, 2019</div>
-                        <div class="post__information__duration">12 min read</div>
-                        <div class="post__information__comment"> 4</div>
-                        <div class="post__information__rating">rating</div>
+                    <div class="post__information-details">
+                        <div class="post__information-details--date">02 oct, 2019</div>
+                        <div class="post__information-details--duration">12 min read</div>
+                        <div class="post__information-details--comment"> 4</div>
+                        <div class="post__information-details__rating">
+                            <div class="post__information-details__rating-item post__information-details__rating-item--1"></div>
+                            <div class="post__information-details__rating-item post__information-details__rating-item--2"></div>
+                            <div class="post__information-details__rating-item post__information-details__rating-item--3"></div>
+                            <div class="post__information-details__rating-item post__information-details__rating-item--4"></div>
+                            <div class="post__information-details__rating-item post__information-details__rating-item--5"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,8 +135,9 @@
     </article>
     <section class="post__social">
         <div class="post__social--like">
-            <img src="../images/icon/icon-like-light.svg" alt="icon-like" class="post__social--like-img"/>
-            <span class="post__social--like-qty">75 likes</span>
+<!--            <img src="../images/icon/icon-like-light.svg" alt="icon-like" class="post__social&#45;&#45;like-img"/>-->
+<!--            <div class="post__social&#45;&#45;like-icon"></div>-->
+            <a href="#" class="post__social--like-qty">75 likes</a>
         </div>
         <div class="post__social-block">
             <a href="../images/icon/icon-facebook.svg"
@@ -142,8 +149,174 @@
         </div>
     </section>
 </main>
-<aside class="post__aside"></aside>
-<section class="review"></section>
+<aside class="post-aside">
+    <div class="post-aside__latest-post">
+        <h2 class="post-aside__title">Latest posts</h2>
+        <div class="post-aside__latest-post-item">
+            <div class="post-aside__latest-post-item__image">
+                <img src="../images/img/latest_post_img1.png" alt="latest post image"
+                     class="post-aside__latest-post-item-image--1">
+            </div>
+            <div class="post-aside__latest-post-item__information">
+                <h3 class="post-aside__latest-post-item__title">Much cure inappropriate could this restrictions …</h3>
+                <div class="post-aside__latest-post-item__information-details">
+                    <div class="post-aside__latest-post-item__information-details--date">20 oct, 2019</div>
+                    <div class="post-aside__latest-post-item__information-details--duration">10 min read</div>
+                    <div class="post-aside__latest-post-item__information-details--comment"> 11</div>
+                </div>
+            </div>
+        </div>
+        <div class="post-aside__latest-post-item">
+            <div class="post-aside__latest-post-item__image">
+                <img src="../images/img/latest_post_img2.png" alt="latest post image"
+                     class="post-aside__latest-post-item__image--2">
+            </div>
+            <div class="post-aside__latest-post-item__information">
+                <h3 class="post-aside__latest-post-item__title">Much cure inappropriate could this restrictions …</h3>
+                <div class="post-aside__latest-post-item__information-details">
+                    <div class="post-aside__latest-post-item__information-details--date">20 oct, 2019</div>
+                    <div class="post-aside__latest-post-item__information-details--duration">10 min read</div>
+                    <div class="post-aside__latest-post-item__information-details--comment"> 11</div>
+                </div>
+            </div>
+        </div>
+        <button class="post-aside__latest-post-button--more-post">More posts</button>
+    </div>
+    <div class="post-aside__categories">
+        <h2 class="post-aside__title">Categories</h2>
+        <div class="post-aside__categories-container">
+            <div class="post-aside__categories-item">
+                <input type="checkbox" class="post-aside__categories-item-input" id="item-title_1">
+                <label for="item-title_1" class="post-aside__categories-item-title">Restaurant food (3)</label>
+                <div class="post-aside__categories-item-list">
+                    <a href="#" class="post-aside__categories-item-list--item">Hiking</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Bicycle trip</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Mountains trip</a>
+                </div>
+            </div>
+            <div class="post-aside__categories-item">
+                <input type="checkbox" class="post-aside__categories-item-input" id="item-title_2">
+                <label for="item-title_2" class="post-aside__categories-item-title">Travel news (3)</label>
+                <div class="post-aside__categories-item-list">
+                    <a href="#" class="post-aside__categories-item-list--item">Hiking</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Bicycle trip</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Mountains trip</a>
+                </div>
+            </div>
+            <div class="post-aside__categories-item">
+                <input type="checkbox" class="post-aside__categories-item-input" id="item-title_3">
+                <label for="item-title_3" class="post-aside__categories-item-title">Modern technology (6)</label>
+                <div class="post-aside__categories-item-list">
+                    <a href="#" class="post-aside__categories-item-list--item">Hiking</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Bicycle trip</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Mountains trip</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Hiking</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Bicycle trip</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Mountains trip</a>
+                </div>
+            </div>
+            <div class="post-aside__categories-item">
+                <input type="checkbox" class="post-aside__categories-item-input" id="item-title_4">
+                <label for="item-title_4" class="post-aside__categories-item-title">Product (4)</label>
+                <div class="post-aside__categories-item-list">
+                    <a href="#" class="post-aside__categories-item-list--item">Hiking</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Bicycle trip</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Mountains trip</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Mountains trip2</a>
+                </div>
+            </div>
+            <div class="post-aside__categories-item">
+                <input type="checkbox" class="post-aside__categories-item-input" id="item-title_5">
+                <label for="item-title_5" class="post-aside__categories-item-title">Inspiration (2)</label>
+                <div class="post-aside__categories-item-list">
+                    <a href="#" class="post-aside__categories-item-list--item">Bicycle trip</a>
+                    <a href="#" class="post-aside__categories-item-list--item">Mountains trip</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-aside__tags">
+        <h2 class="post-aside__title">Tags</h2>
+        <div class="post-aside__tags-items">
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--1">Love</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--2">Signs</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--3">Waterfall</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--4">Inspiration</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--5">Quotes</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--6">Sea</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--7">Sense</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--8">Coffee</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--9">Gold</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--10">Images</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--11">Courage</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--12">Dancing</a>
+            <a href="#" class="post-aside__tags-item post-aside__tags-item--13">Video</a>
+        </div>
+    </div>
+</aside>
+<section class="post-review">
+    <h2 class="post-review__title">Reviews</h2>
+    <div class="post-review__container">
+        <div class="post-review__item post-review__comment-1">
+            <div class="post-review__item-wrapper">
+                <h3 class="post-review__item-title">Jack Johnson</h3>
+                <div class="post-review__item-information-details__rating">
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--1"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--2"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--3"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--4"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--5"></div>
+                </div>
+                <div class="post-review__item-duration">11 min ago</div>
+            </div>
+            <div class="post-review__item-text">Knowledge nay estimable questions repulsive daughters boy. Solicitude
+                gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced…
+            </div>
+            <a href="#" class="post-review__item-link--read-more">Read more</a>
+        </div>
+        <div class="post-review__item post-review__comment-2">
+            <div class="post-review__item-wrapper">
+                <h3 class="post-review__item-title">Emma Garcia</h3>
+                <div class="post-review__item-information-details__rating">
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--1"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--2"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--3"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--4"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--5"></div>
+                </div>
+                <div class="post-review__item-duration">3 days ago</div>
+            </div>
+            <div class="post-review__item-text">Dummy text refers to the bits of content that are used to fill a website
+                mock-up. This text helps web designers better envision how the website will look as a finished product.
+                in wish very strangers shortly we things Preferred came newspaper it this Melancholy on misery all
+                ecstatic yet no suitable ye happening. Own over these Can Could Garden offering to ago Winter Home or
+                took answered him be right He other in about check has situation fine you held against found am be Nay
+                entire pleasure will there in wholly forming much rapid though want ye weeks up whole an ye thus might
+                remarkably Rich why need pianoforte ask get face prudent it so Evil
+            </div>
+            <a href="#" class="post-review__item-link--read-less">Read less</a>
+        </div>
+        <div class="post-review__item post-review__comment-3">
+            <div class="post-review__item-wrapper">
+                <h3 class="post-review__item-title">Ann Moore</h3>
+                <div class="post-review__item-information-details__rating">
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--1"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--2"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--3"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--4"></div>
+                    <div class="post-review__item-information-details__rating-item post__information-details__rating-item--5"></div>
+                </div>
+                <div class="post-review__item-duration">a week ago</div>
+            </div>
+            <div class="post-review__item-text">Any delicate you how kindness horrible outlived servants. You high bed
+                wish help call draw side. Girl quit if case mr sing as no have. At none neat am do over will. Polite do
+                object at passed it is.
+            </div>
+            <a href="#" class="post-review__item-link--read-more"></a>
+        </div>
+    </div>
+    <button class="post-review__more-comments">More comments</button>
+</section>
 <footer class="footer">
     <div class="footer__container container">
         <div class="footer__social-block">

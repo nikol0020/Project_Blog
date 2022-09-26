@@ -1,20 +1,224 @@
 @mixin social-web {
-  &__social-block__item {
-    display: inline-block;
-    width: 23px;
-    height: 23px;
-    margin-right: $defaultIndent;
+  &__social-block {
+    display: flex;
 
-    &--facebook {
-      background: url("../../images/icon/icon-facebook.svg") no-repeat;
+    &__item {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      margin-right: $defaultIndent;
+
+      &--facebook {
+        background: url("../../images/icon/icon-facebook.svg") no-repeat;
+      }
+
+      &--instagram {
+        background: url("../../images/icon/icon-instagram.svg") no-repeat;
+      }
+
+      &--dribble {
+        background: url("../../images/icon/icon-dribble.svg") no-repeat;
+      }
+    }
+  }
+}
+
+@mixin button-light {
+  width: 120px;
+  height: 45px;
+  border: 1px solid $defaultColorText;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+    color: $defaultButtonHoverText;
+    background-color: $defaultButtonHoverFill;
+  }
+}
+
+@mixin button-dark {
+  width: 100px;
+  height: 45px;
+  color: $colorTextDarkButton;
+  background-color: $colorBgDarkButton;
+  border: 1px solid $defaultColorText;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    color: $defaultButtonHoverText;
+    background-color: $defaultButtonHoverFill;
+  }
+}
+
+@mixin title-mark {
+  font: 24px/39px $titleFontSemiBold;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 95px;
+    height: 8px;
+    border: 1px solid $colorBorderTitle;
+    border-top: none;
+    position: absolute;
+    top: 40px;
+  }
+}
+
+@mixin section-title-style {
+  margin-top: 75px;
+  text-align: center;
+
+  &__title {
+    @include title-mark;
+  }
+
+  &__text {
+    font: 17px/26px $defaultFontText;
+    width: 442px;
+    text-align: center;
+    margin: 25px auto 55px;
+  }
+}
+
+@mixin information-details {
+  &-details {
+    display: flex;
+    color: $informationDetailsBlog;
+
+    &--duration {
+      position: relative;
+      margin: 0 20px;
+
+      &:before,
+      &:after {
+        content: '';
+        width: 2px;
+        height: 2px;
+        border: 1px solid $informationDetailsBlog;
+        background: $informationDetailsBlog;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+      }
+
+      &:before {
+        left: -12px;
+      }
+
+      &:after {
+        right: -12px;
+      }
     }
 
-    &--instagram {
-      background: url("../../images/icon/icon-instagram.svg") no-repeat;
+    &--comment {
+      position: relative;
+      padding-left: 18px;
+      margin-right: 10px;
+
+      &:before {
+        content: '';
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        background-image: url("../../images/icon/icon-comment.svg");
+      }
+    }
+  }
+}
+
+@mixin rating {
+  &-details {
+    &__rating {
+      display: flex;
+      padding-top: 6.5px;
+
+      &-item {
+        width: 14px;
+        height: 14px;
+        margin-right: 2px;
+
+        &--1,
+        &--2 {
+          background-image: url('../../images/icon/star-full.svg');
+        }
+
+        &--3 {
+          background-image: url('../../images/icon/star-half.svg');
+        }
+
+        &--4,
+        &--5 {
+          background-image: url('../../images/icon/star-light.svg');
+        }
+      }
+    }
+  }
+}
+
+@mixin menu {
+  font-family: $defaultFontText;
+  font-size: $fontDefaultSize;
+
+  &__list {
+    display: flex;
+    width: 460px;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: 55px;
+    padding: 5px;
+    margin: 20px 5px;
+    text-align: center;
+
+    &:last-child {
+      margin-right: 0;
     }
 
-    &--dribble {
-      background: url("../../images/icon/icon-dribble.svg") no-repeat;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $defaultColorText;
+    font-size: $fontDefaultSize;
+
+    &:hover {
+      font-family: $titleFontSemiBold;
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    width: 90px;
+    height: 60px;
+    flex-shrink: 0;
+    margin: $defaultIndent 10px $defaultIndent 0;
+
+    &__link {
+      font-family: $titleFont;
+      font-size: 17px;
+      color: $defaultColorText;
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+        color: $defaultColorCursorHover;
+      }
     }
   }
 }

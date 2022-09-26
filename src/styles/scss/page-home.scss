@@ -1,0 +1,356 @@
+@import "main";
+
+body {
+  font: 15px/25px $defaultFontText;
+  color: $defaultColorText;
+  box-sizing: border-box;
+}
+
+.header {
+  @include header;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu {
+  @include menu;
+}
+
+.content__block {
+  height: 590px;
+  background-image: url("../../images/img/bg-hp.jpg");
+}
+
+.banner-prolog {
+  width: 100%;
+  margin-top: 70px;
+
+  &__title {
+    font: 28px/37px $titleFontSemiBold;
+    width: 416px;
+  }
+
+  &__text {
+    max-width: 660px;
+    margin-top: 20px;
+    font: 17px/26px $defaultFontText;
+  }
+
+  &__block-buttons {
+    display: flex;
+    margin-top: 20px;
+    width: 250px;
+    justify-content: space-between;
+  }
+
+  &__button {
+    &--explore {
+      @include button-dark;
+    }
+
+    &--learn-more {
+      @include button-light;
+      width: 125px;
+    }
+  }
+}
+
+.about-us {
+  @include section-title-style;
+
+  &__title::before {
+    width: 95px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 1160px;
+  }
+
+  &__items {
+    width: 260px;
+    margin-right: 40px;
+  }
+
+  &__item {
+    width: 260px;
+    height: 184px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    position: relative;
+    padding-top: calc(50% - 85px);
+
+    &::before {
+      content: '';
+      width: 36px;
+      height: 44px;
+      background-color: $white;
+      position: absolute;
+      top: -4px;
+      border-radius: 5px;
+    }
+
+    &--typography {
+      background: linear-gradient(108.56deg, rgba(230, 246, 65, 0.5) 0%, rgba(41, 252, 154, 0.5) 100%);
+
+      &::before {
+        right: -4px;
+      }
+    }
+
+    &--icon-set {
+      background: linear-gradient(236.77deg, rgba(247, 247, 247, 0.5) 0%, rgba(35, 86, 255, 0.5) 100%);
+
+      &::before {
+        left: -4px;
+      }
+    }
+
+    &--accurate {
+      background: linear-gradient(236.42deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 9, 9, 0.5) 100%);
+
+      &::before {
+        right: -4px;
+      }
+    }
+  }
+
+  &__video {
+    width: 860px;
+    height: 592px;
+    position: relative;
+    background-image: url("../../images/img/about-picture.png");
+
+    &::before {
+      content: '';
+      width: 72px;
+      height: 72px;
+      position: absolute;
+      top: calc(50% - 36px);
+      left: calc(50% - 36px);
+      background-image: url("../../images/icon/icon-play.svg");
+    }
+
+  }
+}
+
+.latest-post {
+  @include section-title-style;
+
+  &__title::before {
+    width: 126px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  &__article {
+    width: 360px;
+    max-width: 360px;
+
+    &-img {
+      width: 100%;
+      height: 244px;
+    }
+
+    &-title {
+      font: 20px/32px $defaultFontTitle;
+      margin-top: 25px;
+    }
+
+    &-post {
+      text-align: left;
+    }
+  }
+
+  &__information {
+    @include information-details;
+    margin-top: 20px;
+  }
+}
+
+.latest-portfolio {
+  @include section-title-style;
+
+  &__title::before {
+    width: 160px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  &__item {
+    position: relative;
+    border-radius: 5px;
+
+    &-theme {
+      width: 162px;
+      position: absolute;
+      top: calc(50% - 32px);
+      left: calc(50% - 80px);
+      color: $colorTextCarousel;
+
+      &-title {
+        font: 20px/32px $titleFont;
+      }
+
+      &-text {
+        font: 15px/25px $fontTextLight;
+        margin-top: -6px;
+      }
+    }
+  }
+
+  &__block-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 360px;
+    margin: 40px auto 0;
+  }
+
+  &__button {
+    @include button-light;
+    width: 45px;
+
+
+    &--left {
+      background: no-repeat url('../../images/icon/icon-arrow.svg') 50%;
+      transform: rotate(90deg);
+
+      &:hover {
+        background-color: transparent;
+        box-shadow: 5px 5px 5px $colorShadow;
+      }
+    }
+
+    &--right {
+      background: no-repeat url('../../images/icon/icon-arrow.svg') 50%;
+      transform: rotate(-90deg);
+
+      &:hover {
+        background-color: transparent;
+        box-shadow: -5px 5px 5px $colorShadow;
+      }
+    }
+
+    &--see-all-works {
+      width: 135px;
+      margin-top: -10px;
+    }
+  }
+}
+
+.testimonials {
+  @include section-title-style;
+  padding-top: 80px;
+  margin-top: 20px;
+  padding-bottom: 80px;
+  background: no-repeat url('../../images/img/hc-bg-testimonial.png');
+
+  &__title::before {
+    width: 130px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  &__button {
+    @include button-light;
+    width: 45px;
+    background-color: $white;
+
+
+    &--left {
+      background: no-repeat url('../../images/icon/icon-arrow.svg') 50%;
+      transform: rotate(90deg);
+
+      &:hover {
+        background-color: transparent;
+        box-shadow: 5px 5px 5px $colorShadow;
+      }
+    }
+
+    &--right {
+      background: no-repeat url('../../images/icon/icon-arrow.svg') 50%;
+      transform: rotate(-90deg);
+
+      &:hover {
+        background-color: transparent;
+        box-shadow: -5px 5px 5px $colorShadow;
+      }
+    }
+  }
+
+  &__carousel {
+    width: 620px;
+    height: 265px;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+
+      &-post {
+        width: 280px;
+        height: 265px;
+        background-color: $colorBgCarouselPost;
+        color: $colorTextCarousel;
+        padding: 60px 50px 25px 35px;
+        text-align: left;
+
+        &--text {
+font: 17px/26px $titleFontSemiBold;
+        }
+        &--name {
+          font: 15px/25px $defaultFontText;
+        }
+        &--specialization {
+          font: 15px/25px $fontTextLight;
+        }
+      }
+    }
+  }
+}
+
+.contact-us {
+  @include section-title-style;
+
+  &__title::before {
+    width: 110px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+}
+
+.footer {
+  @include social-web;
+  background-color: $footerBgFill;
+
+  &__container {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

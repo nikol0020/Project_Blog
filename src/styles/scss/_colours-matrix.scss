@@ -4,13 +4,14 @@ $defaultColorBgPost: $fantasy;
 $defaultFill: $white;
 $defaultColorCursorHover: $scorpion;
 $defaultIndent: $defaultPadding;
+$defaultColorBorder: $alto;
 
 //Fonts
 $titleFont:  $fontBold;
 $titleFontSemiBold: $fontSemiBold;
 $defaultFontTitle:  $fontMedium;
-$defaultFont: $defaultFontText;
-$fontLight: $fontTextLight;
+$defaultFontText: $fontRegular;
+$fontTextLight: $fontLight;
 
 //Font size
 $fontBigSize: $fontLSize;
@@ -29,4 +30,12 @@ $footerBgFill: $alabaster;
 $informationDetailsBlog: $gray;
 $borderBoldColor: $mercury;
 $divider: $alto;
-
+$colorTextDarkButton: $white;
+$colorBgDarkButton: $tundra;
+//$colorBgTypography: $anakiwa;
+$colorBgIconSet: $anakiwa;
+$colorBgAccurate: $sundown;
+$colorBorderTitle: $tundra;
+$colorTextCarousel: $white;
+$colorShadow: $gray;
+$colorBgCarouselPost: $abbey;

@@ -1,0 +1,227 @@
+@import "main";
+
+body {
+  font: 15px/25px $defaultFontText;
+  color: $defaultColorText;
+  box-sizing: border-box;
+}
+
+.header {
+  @include header;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu {
+  @include menu;
+}
+
+.page-title {
+  font-family: $titleFontSemiBold, 'Arial', sans-serif;
+  font-size: $fontTitleSize;
+  line-height: 39px;
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 45px;
+    height: 8px;
+    border: 1px solid $defaultColorText;
+    border-top: none;
+    position: absolute;
+    top: 40px;
+  }
+}
+
+.site-search {
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 60px;
+  text-align: right;
+
+  &--label {
+    font: 15px/25px $defaultFontText;
+    color: $defaultColorText;
+    position: relative;
+  }
+
+  &--field {
+    width: 320px;
+    height: 45px;
+    border: 1px solid $defaultColorText;
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+
+  &--button {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 11px;
+    border: none;
+    background-color: $defaultFill;
+    background-image: url("../../images/icon/icon-search.svg");
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.blog {
+  width: 100%;
+
+  .post {
+    width: 100%;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    min-height: 380px;
+    background-color: $defaultColorBgPost;
+    display: flex;
+    text-align: left;
+
+    &__type {
+      width: 84px;
+      height: 78px;
+      border: 3px solid $white;
+      border-radius: 5px;
+      margin-right: -40px;
+      float: right;
+      text-align: center;
+
+      &-img {
+        position: relative;
+        top: calc(50% - 21px);
+      }
+    }
+
+    &__media {
+      max-width: 560px;
+      min-width: 560px;
+      width: 560px;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 380px;
+      max-height: 380px;
+
+      &-img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &--video {
+        position: relative;
+
+        &::before {
+          content: '';
+          width: 72px;
+          height: 72px;
+          position: absolute;
+          top: calc(50% - 36px);
+          left: calc(50% - 36px);
+          background-image: url("../../images/icon/icon-play.svg");
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &--text {
+        display: none;
+
+        & + .post__article {
+          padding: 0 $defaultIndent;
+
+          .post__context {
+            width: 90%;
+          }
+        }
+      }
+    }
+
+    &__article {
+      border-radius: 5px;
+      padding: 0 40px;
+    }
+
+    &__information {
+      @include rating;
+      @include information-details;
+      margin-top: $defaultIndent;
+
+      &__avatar {
+        width: 52px;
+        height: 52px;
+        float: left;
+        margin-right: calc($defaultIndent / 2);
+      }
+
+      &__name {
+        width: 100%;
+        font-weight: 500;
+        font-size: 17px;
+        font-family: $defaultFontTitle;
+        text-align: left;
+      }
+    }
+
+    &__title {
+      font: 20px/26px $defaultFontTitle;
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+
+    &__context {
+      min-width: 40%;
+      margin-bottom: 30px;
+    }
+
+    &__audio-file {
+      height: 37px;
+      zoom: 0.735;
+    }
+  }
+
+  &__read-more {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+
+    .read-more {
+      color: $defaultButtonHoverText;
+      background-color: $defaultButtonHoverFill;
+
+      &:hover {
+        cursor: pointer;
+        color: $defaultButtonHoverFill;
+        background-color: $defaultButtonHoverText;
+      }
+    }
+  }
+}
+
+.read-more {
+  @include button-light;
+}
+
+.footer {
+  @include social-web;
+  background-color: $footerBgFill;
+
+  &__container {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
