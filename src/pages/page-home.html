@@ -229,19 +229,25 @@
             <div class="contact-us__information">
                 <h3 class="contact-us__information-title">Write us a few words about your project and we will prepare
                     proposal for you within 24 hours</h3>
-                <form class="contact-us__form" action="#">
+                <form class="contact-us__form" action="#" id="form">
                     <fieldset>
-                        <legend>Simple fieldset</legend>
-                        <input type="radio" id="radio">
-                        <label for="radio">Spirit of radio</label>
+                        <label class="contact-us__form-label" for="name">Your name</label>
+                        <input class="contact-us__form-input contact-us__form-input--name" type="text" id="name"
+                               required>
+                        <label class="contact-us__form-label" for="email">Email</label>
+                        <input class="contact-us__form-input contact-us__form-input--email" type="email" id="email"
+                               required>
+                        <label class="contact-us__form-label" for="password">Password</label>
+                        <input class="contact-us__form-input contact-us__form-input--password" type="password"
+                               id="password" minlength="8" required>
                     </fieldset>
+                    <button class="contact-us__form-button">Send message</button>
+                    <p class="contact-us__form-text">If you need to have a DNA first, just contact us at
+                        <a href="#" class="contact-us__form-text--link">email@gmail.com</a>
+                    </p>
                 </form>
-                <!--            <div class="contact-us__forma">-->
-                <!--                <div class="contact-us__date"></div>-->
-                <!--                <button></button>-->
-                <!--            </div>-->
                 <div class="contact-us__map">
-                    <img src="../images/img/map.png" class="contact-us__map-image">
+                    <img class="contact-us__map-image" src="../images/img/map.png" alt="image">
                 </div>
             </div>
         </div>

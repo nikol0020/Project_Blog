@@ -364,13 +364,13 @@ body {
     &-title {
       font: 24px/39px $titleFontSemiBold;
       color: $colorBorderTitle;
-      margin: 110px 5px 50px;
+      margin: 110px 0 50px;
     }
   }
 
   &__list {
     padding-left: $defaultIndent;
-    margin-left: 15px;
+    margin-left: 10px;
     margin-bottom: 40px;
 
     &-item {
@@ -388,7 +388,7 @@ body {
         position: absolute;
         top: 3px;
         left: -51px;
-        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.5)
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5)
       }
 
       &::after {
@@ -465,7 +465,46 @@ body {
   &__form {
     width: 50%;
     height: calc(100% - $heightTitleForm);
-    padding: 0 30px;
+    padding: 30px;
+    font: 17px/28px $defaultFontText;
+
+    &-input {
+      width: 320px;
+      height: 45px;
+      border-radius: 5px;
+      border: none;
+      border: 1px solid $colorBorderForm;
+      outline: none;
+      margin-bottom: 30px;
+      font: 17px/28px $defaultFontText;
+
+      &:focus {
+        border: 1px solid $colorBgDarkButton;
+      }
+
+      //&:invalid {
+      //  border: 1px solid $colorBorderError;
+      //}
+
+      &:valid {
+        font: 17px/28px $defaultFontText;
+      }
+    }
+
+    &-button {
+      @include button-dark;
+      width: 144px;
+      margin-bottom: 35px;
+    }
+
+    &-text {
+      color: $defaultColorText;
+
+      &--link {
+        font-family: $titleFont;
+        color: $defaultColorText;
+      }
+    }
   }
 
   &__map {
