@@ -61,6 +61,10 @@ input[type=search]::-webkit-search-cancel-button {
   appearance: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "Hind Siliguri Bold";
   font-style: normal;
@@ -99,6 +103,7 @@ body {
   margin-right: auto;
   grid-template-rows: 80px min-content min-content 70px;
   grid-template-columns: 660px 540px;
+  grid-row-gap: 35px;
   grid-template-areas: "_header_ _header_" "main aside" "review review" "_footer_ _footer_";
 }
 
@@ -145,16 +150,18 @@ body {
 }
 
 .menu {
-  font-family: "Hind Siliguri Regular", "Arial", sans-serif, "Arial", sans-serif;
+  font-family: "Hind Siliguri Regular", "Arial", sans-serif;
   font-size: 15px;
 }
 .menu__list {
   display: flex;
+  width: 460px;
+  justify-content: space-between;
 }
 .menu__item {
   width: 55px;
-  padding: 5px 10px;
-  margin: 25px 5px;
+  padding: 5px;
+  margin: 20px 5px;
   text-align: center;
 }
 .menu__item:last-child {
@@ -169,23 +176,35 @@ body {
   font-size: 15px;
 }
 .menu__link:hover {
-  font-family: "Hind Siliguri SemiBold", "Arial", sans-serif, "Arial", sans-serif;
+  font-family: "Hind Siliguri SemiBold", "Arial", sans-serif;
   text-decoration: underline;
 }
 
+.container {
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
 .page-title {
-  font-family: "Hind Siliguri SemiBold", "Arial", sans-serif, "Arial", sans-serif;
+  font-family: "Hind Siliguri SemiBold", "Arial", sans-serif;
   font-size: 24px;
   line-height: 39px;
   margin-top: 50px;
 }
 .page-title--main {
+  font-family: "Hind Siliguri SemiBold", "Arial", sans-serif;
   font-size: 28px;
   line-height: 37px;
 }
 
 .post {
   width: 100%;
+}
+.post__social-block {
+  display: flex;
 }
 .post__social-block__item {
   display: inline-block;
@@ -250,20 +269,33 @@ body {
   position: relative;
   margin-top: 25px;
 }
-.post__information__avatar {
-  width: 52px;
-  height: 52px;
-  margin-right: 12.5px;
+.post__information-details__rating {
+  display: flex;
+  padding-top: 6.5px;
 }
-.post__information--details {
+.post__information-details__rating-item {
+  width: 14px;
+  height: 14px;
+  margin-right: 2px;
+}
+.post__information-details__rating-item--1, .post__information-details__rating-item--2 {
+  background-image: url("../../images/icon/star-full.svg");
+}
+.post__information-details__rating-item--3 {
+  background-image: url("../../images/icon/star-half.svg");
+}
+.post__information-details__rating-item--4, .post__information-details__rating-item--5 {
+  background-image: url("../../images/icon/star-light.svg");
+}
+.post__information-details {
   display: flex;
   color: #818181;
 }
-.post__information__duration {
+.post__information-details--duration {
   position: relative;
   margin: 0 20px;
 }
-.post__information__duration:before, .post__information__duration:after {
+.post__information-details--duration:before, .post__information-details--duration:after {
   content: "";
   width: 2px;
   height: 2px;
@@ -273,25 +305,18 @@ body {
   position: absolute;
   top: 10px;
 }
-.post__information__duration:before {
+.post__information-details--duration:before {
   left: -12px;
 }
-.post__information__duration:after {
+.post__information-details--duration:after {
   right: -12px;
 }
-.post__information__name {
-  width: 100%;
-  font-weight: 500;
-  font-size: 17px;
-  font-family: "Hind Siliguri Medium", "Arial", sans-serif;
-  text-align: left;
-}
-.post__information__comment {
+.post__information-details--comment {
   position: relative;
   padding-left: 18px;
   margin-right: 10px;
 }
-.post__information__comment:before {
+.post__information-details--comment:before {
   content: "";
   width: 14px;
   height: 14px;
@@ -300,8 +325,20 @@ body {
   top: 5px;
   background-image: url("../../images/icon/icon-comment.svg");
 }
+.post__information__avatar {
+  width: 52px;
+  height: 52px;
+  margin-right: 12.5px;
+}
+.post__information__name {
+  width: 100%;
+  font-weight: 500;
+  font-size: 17px;
+  font-family: "Hind Siliguri Medium", "Arial", sans-serif;
+  text-align: left;
+}
 .post__section-title {
-  font: 24px/39px "Hind Siliguri Medium", "Arial", sans-serif;
+  font: 24px/39px "Hind Siliguri SemiBold", "Arial", sans-serif;
   margin-bottom: 10px;
   margin-top: 15px;
 }
@@ -336,9 +373,350 @@ body {
   padding-bottom: 5px;
   border-bottom: 1px solid #dddddd;
 }
+.post__social__social-block {
+  display: flex;
+}
+.post__social__social-block__item {
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  margin-right: 25px;
+}
+.post__social__social-block__item--facebook {
+  background: url("../../images/icon/icon-facebook.svg") no-repeat;
+}
+.post__social__social-block__item--instagram {
+  background: url("../../images/icon/icon-instagram.svg") no-repeat;
+}
+.post__social__social-block__item--dribble {
+  background: url("../../images/icon/icon-dribble.svg") no-repeat;
+}
+.post__social--like-qty {
+  position: relative;
+  padding-left: 30px;
+  text-decoration: none;
+  color: #4D4949;
+  padding-top: 5px;
+}
+.post__social--like-qty::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: no-repeat url("../../images/icon/icon-like-light.svg");
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.post__social--like-qty:hover {
+  background: no-repeat url("../../images/icon/icon-like-hover.svg");
+}
+.post__social--like-qty:active {
+  background: no-repeat url("../../images/icon/icon-like-active.svg");
+}
+.post__social-block__item--instagram {
+  order: 1;
+}
+.post-review__title {
+  font: 24px/39px "Hind Siliguri SemiBold", "Arial", sans-serif;
+  margin-bottom: 28px;
+}
+.post-review__container {
+  border-left: 1px solid #dddddd;
+  position: relative;
+  margin-left: 38px;
+  padding: 30px 10px 1px 0;
+}
+.post-review__container::before, .post-review__container::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  left: -9px;
+}
+.post-review__container::before {
+  top: -16px;
+}
+.post-review__container::after {
+  bottom: -16px;
+}
+.post-review__item {
+  margin-left: 55px;
+  padding: 20px 20px 35px;
+  background: #FCF6F6;
+  margin-bottom: 70px;
+  border-radius: 5px;
+  position: relative;
+}
+.post-review__item::before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: -98px;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.post-review__item-wrapper {
+  display: flex;
+}
+.post-review__item-information-details__rating {
+  display: flex;
+  padding-top: 6.5px;
+}
+.post-review__item-information-details__rating-item {
+  width: 14px;
+  height: 14px;
+  margin-right: 2px;
+}
+.post-review__item-information-details__rating-item--1, .post-review__item-information-details__rating-item--2 {
+  background-image: url("../../images/icon/star-full.svg");
+}
+.post-review__item-information-details__rating-item--3 {
+  background-image: url("../../images/icon/star-half.svg");
+}
+.post-review__item-information-details__rating-item--4, .post-review__item-information-details__rating-item--5 {
+  background-image: url("../../images/icon/star-light.svg");
+}
+.post-review__item-title {
+  font-size: 17px;
+  font-family: "Hind Siliguri Medium", "Arial", sans-serif;
+  display: inline-block;
+  margin-right: 10px;
+}
+.post-review__item-duration {
+  position: absolute;
+  right: 20px;
+}
+.post-review__item-duration::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../images/icon/icon-time.svg");
+}
+.post-review__item-link--read-more, .post-review__item-link--read-less {
+  font-size: 15px;
+  font-family: "Hind Siliguri Medium", "Arial", sans-serif;
+  color: #4D4949;
+  float: right;
+}
+.post-review__item:last-child {
+  margin-bottom: 30px;
+}
+.post-review__comment-1 {
+  position: relative;
+}
+.post-review__comment-1::before {
+  background-image: url("../../images/img/Neil.png");
+}
+.post-review__comment-2::before {
+  background-image: url("../../images/img/Sarah.png");
+}
+.post-review__comment-3::before {
+  background-image: url("../../images/img/Grace.png");
+}
+.post-review__more-comments {
+  width: 120px;
+  height: 45px;
+  border: 1px solid #4D4949;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  width: 160px;
+  margin-top: 70px;
+  margin-bottom: 80px;
+  margin-left: 42%;
+}
+.post-review__more-comments:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #393737;
+}
+.post-aside {
+  width: 460px;
+  margin-left: 40px;
+  margin-top: 170px;
+}
+.post-aside__latest-post, .post-aside__categories, .post-aside__tags {
+  width: 100%;
+  padding: 40px 30px 30px;
+  margin-bottom: 70px;
+  background-color: #FCF6F6;
+  border-radius: 5px;
+}
+.post-aside__latest-post {
+  padding-bottom: 75px;
+}
+.post-aside__latest-post-item {
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.post-aside__latest-post-item__image {
+  width: 160px;
+  margin-right: 15px;
+}
+.post-aside__latest-post-item__title {
+  font: 17px/23px "Hind Siliguri Medium", "Arial", sans-serif;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.post-aside__latest-post-item__information-details {
+  display: flex;
+  color: #818181;
+}
+.post-aside__latest-post-item__information-details--duration {
+  position: relative;
+  margin: 0 20px;
+}
+.post-aside__latest-post-item__information-details--duration:before, .post-aside__latest-post-item__information-details--duration:after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border: 1px solid #818181;
+  background: #818181;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+}
+.post-aside__latest-post-item__information-details--duration:before {
+  left: -12px;
+}
+.post-aside__latest-post-item__information-details--duration:after {
+  right: -12px;
+}
+.post-aside__latest-post-item__information-details--comment {
+  position: relative;
+  padding-left: 18px;
+  margin-right: 10px;
+}
+.post-aside__latest-post-item__information-details--comment:before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  background-image: url("../../images/icon/icon-comment.svg");
+}
+.post-aside__latest-post-item__information-details__rating {
+  display: flex;
+  padding-top: 6.5px;
+}
+.post-aside__latest-post-item__information-details__rating-item {
+  width: 14px;
+  height: 14px;
+  margin-right: 2px;
+}
+.post-aside__latest-post-item__information-details__rating-item--1, .post-aside__latest-post-item__information-details__rating-item--2 {
+  background-image: url("../../images/icon/star-full.svg");
+}
+.post-aside__latest-post-item__information-details__rating-item--3 {
+  background-image: url("../../images/icon/star-half.svg");
+}
+.post-aside__latest-post-item__information-details__rating-item--4, .post-aside__latest-post-item__information-details__rating-item--5 {
+  background-image: url("../../images/icon/star-light.svg");
+}
+.post-aside__latest-post-button--more-post {
+  width: 120px;
+  height: 45px;
+  border: 1px solid #4D4949;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  float: right;
+}
+.post-aside__latest-post-button--more-post:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #393737;
+}
+.post-aside__title {
+  font: 24px/39px "Hind Siliguri SemiBold", "Arial", sans-serif;
+  border-bottom: 1px solid #dddddd;
+}
+.post-aside__categories-item {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 17px;
+  font-family: "Hind Siliguri Regular", "Arial", sans-serif;
+}
+.post-aside__categories-item-title {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+.post-aside__categories-item-title:hover {
+  font-weight: 600;
+}
+.post-aside__categories-item-title::after {
+  content: "";
+  width: 18px;
+  height: 11px;
+  background-image: url("../../images/icon/icon-arrow.svg");
+  position: absolute;
+  right: 0;
+  top: 8px;
+  bottom: 16px;
+}
+.post-aside__categories-item-input {
+  appearance: none;
+  position: absolute;
+}
+.post-aside__categories-item-input:checked ~ .post-aside__categories-item-list {
+  display: block;
+}
+.post-aside__categories-item-input:checked ~ .post-aside__categories-item-title::after {
+  transform: rotateX(180deg);
+}
+.post-aside__categories-item-list {
+  display: none;
+}
+.post-aside__categories-item-list--item {
+  padding: 5px 0;
+  text-decoration: none;
+  display: block;
+  font-family: "Hind Siliguri Light", "Arial", sans-serif;
+  font-size: 15px;
+  color: #4D4949;
+}
+.post-aside__categories-item-list--item:hover {
+  font-family: "Hind Siliguri Medium", "Arial", sans-serif;
+}
+.post-aside__tags-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.post-aside__tags-item {
+  border: 1px solid #4D4949;
+  padding: 2px 15px;
+  margin-left: 0;
+  margin-right: 11px;
+  margin-bottom: 14px;
+  border-radius: 5px;
+  color: #4D4949;
+  text-decoration: none;
+}
+.post-aside__tags-item:hover {
+  color: #ffffff;
+  background-color: #393737;
+}
 
 .footer {
   background-color: #F8F8F8;
+}
+.footer__social-block {
+  display: flex;
 }
 .footer__social-block__item {
   display: inline-block;

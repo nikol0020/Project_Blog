@@ -316,11 +316,13 @@ body {
         text-align: left;
 
         &--text {
-font: 17px/26px $titleFontSemiBold;
+          font: 17px/26px $titleFontSemiBold;
         }
+
         &--name {
           font: 15px/25px $defaultFontText;
         }
+
         &--specialization {
           font: 15px/25px $fontTextLight;
         }
@@ -336,10 +338,140 @@ font: 17px/26px $titleFontSemiBold;
     width: 110px;
   }
 
+  &__text {
+    margin-bottom: 70px;
+  }
+
   &__wrapper {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0;
+    margin-top: 20px;
+    text-align: left;
+    background-color: $contactUsBgFill;
+    border-bottom: 1px solid $defaultColorBorder;
+  }
+
+  &__social {
+    @include social-web;
+  }
+
+  &__next-step {
+    display: flex;
+    margin-bottom: -10px;
+
+    &-title {
+      font: 24px/39px $titleFontSemiBold;
+      color: $colorBorderTitle;
+      margin: 110px 5px 50px;
+    }
+  }
+
+  &__list {
+    padding-left: $defaultIndent;
+    margin-left: 15px;
+    margin-bottom: 40px;
+
+    &-item {
+      margin-left: 15px;
+      max-width: 320px;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background-color: $defaultFill;
+        border: 4px solid $defaultColorText;
+        border-radius: 50%;
+        position: absolute;
+        top: 3px;
+        left: -51px;
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.5)
+      }
+
+      &::after {
+        content: '';
+        width: 1px;
+        height: 1px;
+        border: 1px solid $defaultColorText;
+        background: $defaultColorText;
+        border-radius: 50%;
+        position: absolute;
+        top: 12px;
+        left: -42px;
+      }
+
+      &--title {
+        font: 15px/26px $titleFont;
+      }
+
+      &--text {
+        font: 15px/26px $defaultFontText;
+        padding-bottom: 25px;
+        position: relative;
+
+        &::before {
+          content: '';
+          width: 2px;
+          height: 102%;
+          border-left: 1px solid $defaultColorBorder;
+          position: absolute;
+          left: -42.5px;
+        }
+      }
+
+      &:last-child {
+        .contact-us__list-item--text::before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &__information {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 760px;
+    position: relative;
+    top: -60px;
+    margin-left: 40px;
+    border: 1px solid $defaultColorBorder;
+    border-radius: 5px;
+    box-shadow: -5px 5px 10px 8px rgb(0 0 0 / 10%);
+
+    &-title {
+      width: 100%;
+      height: $heightTitleForm;
+      flex-shrink: 0;
+      font: 17px/21px $defaultFontTitle;
+      padding: 10px 65px 10px 85px;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 45px;
+        height: 45px;
+        background-image: url('../../images/icon/icon-contact.svg');
+        position: absolute;
+        top: 6px;
+        left: 20px;
+      }
+    }
+  }
+
+  &__form {
+    width: 50%;
+    height: calc(100% - $heightTitleForm);
+    padding: 0 30px;
+  }
+
+  &__map {
+    width: 50%;
+    height: calc(100% - $heightTitleForm);
+    overflow: hidden;
   }
 }
 
