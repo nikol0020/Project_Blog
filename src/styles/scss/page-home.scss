@@ -20,6 +20,12 @@ body {
 
 .menu {
   @include menu;
+
+  #time {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .content__block {

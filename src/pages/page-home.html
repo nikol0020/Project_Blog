@@ -17,22 +17,25 @@
         <nav class="menu">
             <ul class="menu__list">
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Home</a>
+                    <a class="menu__link" href="./page-home.html">Home</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Portfolio</a>
+                    <a class="menu__link" href="#portfolio">Portfolio</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Blog</a>
+                    <a class="menu__link" href="./page-blog.html">Blog</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Pages</a>
+                    <a class="menu__link" href="./page-post.html">Pages</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">About</a>
+                    <a class="menu__link" href="#about-us">About</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Contact</a>
+                    <a class="menu__link" href="#contact-us">Contact</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" id="time"></a>
                 </li>
             </ul>
         </nav>
@@ -51,7 +54,7 @@
 </div>
 
 <main class="container">
-    <section class="about-us">
+    <section class="about-us" id="about-us">
         <h2 class="about-us__title">About us</h2>
         <h5 class="about-us__text">This is who we are - or at least who we strive to be…</h5>
         <div class="about-us__wrapper">
@@ -87,7 +90,8 @@
                 <figcaption class="latest-post__article-post">
                     <h2 class="latest-post__article-title">In the Future We Will All Live in Star Wars</h2>
                     <p class="latest-post__article-text">The thing you’re doing now, reading prose on a screen, is going
-                        out of fashion. The defining narrative of our online moment concerns the decline of text, and the
+                        out of fashion. The defining narrative of our online moment concerns the decline of text, and
+                        the
                         exploding reach and power of audio and video…</p>
                     <div class="latest-post__information">
                         <div class="latest-post__information-details">
@@ -135,7 +139,7 @@
         </div>
     </section>
 
-    <section class="latest-portfolio">
+    <section class="latest-portfolio" id="portfolio">
         <h2 class="latest-portfolio__title">Latest portfolio</h2>
         <h5 class="latest-portfolio__text">Put there articles successfully special warrant submit agree what along
             then</h5>
@@ -191,7 +195,7 @@
     </div>
 </div>
 
-<section class="contact-us">
+<section class="contact-us" id="contact-us">
     <h2 class="contact-us__title">Contact us</h2>
     <h5 class="contact-us__text">Put there articles successfully special warrant submit agree what along then</h5>
     <div class="footer__social-block container">
@@ -263,8 +267,12 @@
         </div>
         <div class="footer__logo">BlogWorld</div>
         <div class="footer__copyright">©2019 All Rights Reserved.</div>
+        <div class="footer__date-wrapper">
+            <div class="footer__clock" id="clock"></div>
+            <div class="footer__date" id="date"></div>
+        </div>
     </div>
 </footer>
-
+<script src="./practice/time.js"></script>
 </body>
 </html>
