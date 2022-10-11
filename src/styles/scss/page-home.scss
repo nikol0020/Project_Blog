@@ -203,6 +203,11 @@ body {
     position: relative;
     border-radius: 5px;
 
+    &-img {
+      max-width: 360px;
+      height: 240px;
+    }
+
     &-theme {
       width: 162px;
       position: absolute;
@@ -266,6 +271,7 @@ body {
   margin-top: 20px;
   padding-bottom: 80px;
   background: no-repeat url('../../images/img/hc-bg-testimonial.png');
+  background-size: cover;
 
   &__title::before {
     width: 130px;
@@ -543,4 +549,59 @@ body {
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.carousel {
+  &__container {
+    width: 3480px;
+    height: 245px;
+    position: absolute;
+    left: -1160px;
+    display: flex;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__wrapper {
+    width: 1160px;
+    overflow: hidden;
+    height: 245px;
+    position: relative;
+  }
+
+  &__item {
+    width: 364px;
+    margin: 10px;
+    display: inline-block;
+  }
+}
+
+@keyframes transition-right {
+  from {
+    left: -1160px;
+  }
+  to {
+    left: -2320px;
+  }
+}
+
+.transition-right {
+  animation-name: transition-right;
+  animation-duration: 3s;
+}
+
+@keyframes transition-left {
+  from {
+    left: -1160px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+.transition-left {
+  animation-name: transition-left;
+  animation-duration: 3s;
 }
