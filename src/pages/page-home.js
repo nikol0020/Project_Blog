@@ -35,8 +35,6 @@ function createBannerPrologBlock() {
     let elem;
     let elemChild, elemChild2, elemChild3, elemChild4, elemChild5;
     let jsonResponse = jsonMock();
-    console.log(jsonResponse);
-    console.log(jsonResponse.pages[0].section[0].learnMore);
 
     //*** create section banner-prolog ***
 
@@ -54,47 +52,49 @@ function createBannerPrologBlock() {
     baseElem.prepend(fragment);
 
     //*** create section about-us ***
+    console.log(jsonResponse);
+    console.log(jsonResponse.pages[0].section[0].learnMore);
 
     //baseElem = deleteHtmlBlock('about-us');
     fragment = new DocumentFragment();
-    elem = createTag('h2', 'about-us__title', 'About us');
+    elem = createTag('h2', 'about-us__title', jsonResponse.pages[0].section[1].title);
     fragment.append(elem);
-    elem = createTag('h5', 'about-us__text', 'This is who we are - or at least who we strive to be…');
+    elem = createTag('h5', 'about-us__text', jsonResponse.pages[0].section[1].text);
     fragment.append(elem);
-    elem = createTag('div', 'about-us__wrapper', '');
+    elem = createTag('div', 'about-us__wrapper');
     fragment.append(elem);
-    elemChild = createTag('div', 'about-us__items', '');
+    elemChild = createTag('div', 'about-us__items');
     elem.append(elemChild);
-    elemChild2 = createTag('figure', 'about-us__item about-us__item--typography', '');
+    elemChild2 = createTag('figure', 'about-us__item about-us__item--typography');
     elemChild3 = createTag('img', '', '');
-    elemChild3.setAttribute('src', '../images/icon/icon-typography.svg');
+    elemChild3.setAttribute('src', jsonResponse.pages[0].section[1].items[0].itemLink);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('figcaption', '', 'Typography');
+    elemChild3 = createTag('figcaption', '', jsonResponse.pages[0].section[1].items[0].itemName);
     elemChild2.append(elemChild3);
     elemChild.append(elemChild2);
     elem.append(elemChild);
     fragment.append(elem);
 
-    elemChild2 = createTag('figure', 'about-us__item about-us__item--icon-set', '');
+    elemChild2 = createTag('figure', 'about-us__item about-us__item--icon-set');
     elemChild3 = createTag('img', '', '');
-    elemChild3.setAttribute('src', '../images/icon/icon-iconset.svg');
+    elemChild3.setAttribute('src', jsonResponse.pages[0].section[1].items[1].itemLink);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('figcaption', '', 'Icon set');
+    elemChild3 = createTag('figcaption', '', jsonResponse.pages[0].section[1].items[0].itemName);
     elemChild2.append(elemChild3);
     elemChild.append(elemChild2);
     elem.append(elemChild);
     fragment.append(elem);
 
-    elemChild2 = createTag('figure', 'about-us__item about-us__item--accurate', '');
+    elemChild2 = createTag('figure', 'about-us__item about-us__item--accurate');
     elemChild3 = createTag('img', '', '');
-    elemChild3.setAttribute('src', '../images/icon/icon-accurate.svg');
+    elemChild3.setAttribute('src', jsonResponse.pages[0].section[1].items[2].itemLink);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('figcaption', '', 'Accurate');
+    elemChild3 = createTag('figcaption', '', jsonResponse.pages[0].section[1].items[1].itemName);
     elemChild2.append(elemChild3);
     elemChild.append(elemChild2);
     elem.append(elemChild);
     fragment.append(elem);
-    elemChild = createTag('div', 'about-us__video', '');
+    elemChild = createTag('div', 'about-us__video');
     elem.append(elemChild);
     fragment.append(elem);
     baseElem = document.getElementById('about-us');
@@ -104,75 +104,72 @@ function createBannerPrologBlock() {
 
   //  baseElem = deleteHtmlBlock('latest-post');
     fragment = new DocumentFragment();
-    elem = createTag('h2', 'latest-post__title', 'Latest posts');
+    elem = createTag('h2', 'latest-post__title', jsonResponse.pages[0].section[2].title);
     fragment.append(elem);
-    elem = createTag('h5', 'latest-post__text', 'Information is a source of learning.' +
-        '            But unless it is organized, processed and available to the right people');
+    elem = createTag('h5', 'latest-post__text', jsonResponse.pages[0].section[2].text);
     fragment.append(elem);
-    elem = createTag('div', 'latest-post__wrapper container', '');
+    elem = createTag('div', 'latest-post__wrapper container');
 
-    elemChild = createTag('figure', 'latest-post__article', '');
-    elemChild2 = createTag('img', 'latest-post__article-img', '');
-    elemChild2.setAttribute('src', '../images/img/img-post1.png');
+    elemChild = createTag('figure', 'latest-post__article');
+    elemChild2 = createTag('img', 'latest-post__article-img');
+    elemChild2.setAttribute('src', jsonResponse.pages[0].section[2].articles[0].articleImage);
     elemChild.append(elemChild2);
-    elemChild2 = createTag('figcaption', 'latest-post__article-post', '');
-    elemChild3 = createTag('h2', 'latest-post__article-title', 'In the Future We Will All Live in Star Wars');
+    elemChild2 = createTag('figcaption', 'latest-post__article-post');
+    elemChild3 = createTag('h2', 'latest-post__article-title', jsonResponse.pages[0].section[2].articles[0].articleTitle);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('p', 'latest-post__article-text', 'The thing you’re doing now, reading prose on a screen, is going' +
-        '                        out of fashion. The defining narrative of our online moment concerns the decline of text, and' +
-        '                        the exploding reach and power of audio and video…');
+    elemChild3 = createTag('p', 'latest-post__article-text', jsonResponse.pages[0].section[2].articles[0].articleText);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('div', 'latest-post__information', '');
-    elemChild4 = createTag('div', 'latest-post__information-details', '');
-    elemChild5 = createTag('div', 'latest-post__information-details--date', '20 oct, 2019');
+    elemChild3 = createTag('div', 'latest-post__information');
+    elemChild4 = createTag('div', 'latest-post__information-details');
+    elemChild5 = createTag('div', 'latest-post__information-details--date', jsonResponse.pages[0].section[2].articles[0].information.date);
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('div', 'latest-post__information-details--duration', '10 min read');
+    elemChild5 = createTag('div', 'latest-post__information-details--duration', jsonResponse.pages[0].section[2].articles[0].information.duration);
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('div', 'latest-post__information-details--comment', ' 11');
+    elemChild5 = createTag('div', 'latest-post__information-details--comment', jsonResponse.pages[0].section[2].articles[0].information.comment);
     elemChild4.append(elemChild5);
     elemChild3.append(elemChild4);
     elemChild2.append(elemChild3);
     elemChild.append(elemChild2);
     elem.append(elemChild);
 
-    elemChild = createTag('figure', 'latest-post__article', '');
-    elemChild2 = createTag('img', 'latest-post__article-img', '');
-    elemChild2.setAttribute('src', '../images/img/img-post2h.png');
+    elemChild = createTag('figure', 'latest-post__article');
+    elemChild2 = createTag('img', 'latest-post__article-img');
+    elemChild2.setAttribute('src', jsonResponse.pages[0].section[2].articles[1].articleImage);
     elemChild.append(elemChild2);
-    elemChild2 = createTag('figcaption', 'latest-post__article-post', '');
-    elemChild3 = createTag('h2', 'latest-post__article-title', 'Rubik’s Cube? No, Robotics and AI are…');
+    elemChild2 = createTag('figcaption', 'latest-post__article-post');
+    elemChild3 = createTag('h2', 'latest-post__article-title', jsonResponse.pages[0].section[2].articles[1].articleTitle);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('p', 'latest-post__article-text', 'In other words, I will try to de-hype the crowd about the recent development in robotics. Concretely, OpenAI has claimed some pretty amazing results with learning to solve the Rubik’s cube with a robotic hand…');
+    elemChild3 = createTag('p', 'latest-post__article-text', jsonResponse.pages[0].section[2].articles[1].articleText);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('div', 'latest-post__information', '');
-    elemChild4 = createTag('div', 'latest-post__information-details', '');
-    elemChild5 = createTag('div', 'latest-post__information-details--date', '11 oct, 2019');
+    elemChild3 = createTag('div', 'latest-post__information');
+    elemChild4 = createTag('div', 'latest-post__information-details');
+    elemChild5 = createTag('div', 'latest-post__information-details--date', jsonResponse.pages[0].section[2].articles[1].information.date);
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('div', 'latest-post__information-details--duration', '7 min read');
+    elemChild5 = createTag('div', 'latest-post__information-details--duration', jsonResponse.pages[0].section[2].articles[1].information.duration);
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('div', 'latest-post__information-details--comment', ' 19');
+    elemChild5 = createTag('div', 'latest-post__information-details--comment', jsonResponse.pages[0].section[2].articles[1].information.comment);
     elemChild4.append(elemChild5);
     elemChild3.append(elemChild4);
     elemChild2.append(elemChild3);
     elemChild.append(elemChild2);
     elem.append(elemChild);
 
-    elemChild = createTag('figure', 'latest-post__article', '');
-    elemChild2 = createTag('img', 'latest-post__article-img', '');
-    elemChild2.setAttribute('src', '../images/img/img-post3h.png');
+    elemChild = createTag('figure', 'latest-post__article');
+    elemChild2 = createTag('img', 'latest-post__article-img');
+    elemChild2.setAttribute('src',  jsonResponse.pages[0].section[2].articles[2].articleImage);
     elemChild.append(elemChild2);
     elemChild2 = createTag('figcaption', 'latest-post__article-post', '');
-    elemChild3 = createTag('h2', 'latest-post__article-title', 'How the Internet of Things will Transfo…');
+    elemChild3 = createTag('h2', 'latest-post__article-title', jsonResponse.pages[0].section[2].articles[2].articleTitle);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('p', 'latest-post__article-text', 'The Internet of Things (IoT) promises to be the most important technological development for consumers since the advent of the smartphone. Experts believe that this collection of internet-connected technolog…');
+    elemChild3 = createTag('p', 'latest-post__article-text', jsonResponse.pages[0].section[2].articles[1].articleText);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('div', 'latest-post__information', '');
-    elemChild4 = createTag('div', 'latest-post__information-details', '');
-    elemChild5 = createTag('div', 'latest-post__information-details--date', '28 sep, 2019');
+    elemChild3 = createTag('div', 'latest-post__information');
+    elemChild4 = createTag('div', 'latest-post__information-details');
+    elemChild5 = createTag('div', 'latest-post__information-details--date', jsonResponse.pages[0].section[2].articles[2].information.date);
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('div', 'latest-post__information-details--duration', '16 min read');
+    elemChild5 = createTag('div', 'latest-post__information-details--duration', jsonResponse.pages[0].section[2].articles[2].information.duration);
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('div', 'latest-post__information-details--comment', ' 41');
+    elemChild5 = createTag('div', 'latest-post__information-details--comment', jsonResponse.pages[0].section[2].articles[2].information.comment);
     elemChild4.append(elemChild5);
     elemChild3.append(elemChild4);
     elemChild2.append(elemChild3);
@@ -187,9 +184,9 @@ function createBannerPrologBlock() {
 
     //  baseElem = deleteHtmlBlock('portfolio');
     fragment = new DocumentFragment();
-    elem = createTag('h2', 'latest-portfolio__title', 'Latest portfolio');
+    elem = createTag('h2', 'latest-portfolio__title', jsonResponse.pages[0].section[3].title);
     fragment.append(elem);
-    elem = createTag('h5', 'latest-portfolio__text', 'Put there articles successfully special warrant submit agree what along then');
+    elem = createTag('h5', 'latest-portfolio__text', jsonResponse.pages[0].section[3].text);
     fragment.append(elem);
 
     // commented block with carousel items
@@ -321,7 +318,7 @@ function createBannerPrologBlock() {
 
     //  baseElem = deleteHtmlBlock('testimonials');
     fragment = new DocumentFragment();
-    elem = createTag('h2', 'testimonials__title', 'Testimonials');
+    elem = createTag('h2', 'testimonials__title', jsonResponse.pages[0].section[4].title);
     fragment.append(elem);
     elem = createTag('div', 'testimonials__wrapper');
     elemChild = createTag('button', 'testimonials__button testimonials__button--left');
@@ -330,17 +327,16 @@ function createBannerPrologBlock() {
     elemChild2 = createTag('figure', 'testimonials__carousel-item');
     elemChild3 = createTag('figcaption', 'testimonials__carousel-item-post');
     elemChild4 = createTag('p', 'testimonials__carousel-item-post--text');
-    elemChild5 = createTag('q', '', 'We move at a fast pace. I’m always working on' +
-        '                            something. I am excited about it!');
+    elemChild5 = createTag('q', '', jsonResponse.pages[0].section[4].item[0].quote);
     elemChild4.append(elemChild5);
     elemChild3.append(elemChild4);
-    elemChild4 = createTag('p', 'testimonials__carousel-item-post--name', 'Martin Oda');
+    elemChild4 = createTag('p', 'testimonials__carousel-item-post--name', jsonResponse.pages[0].section[4].item[0].name);
     elemChild3.append(elemChild4);
-    elemChild4 = createTag('p', 'testimonials__carousel-item-post--specialization', 'Product designer');
+    elemChild4 = createTag('p', 'testimonials__carousel-item-post--specialization', jsonResponse.pages[0].section[4].item[0].specialization);
     elemChild3.append(elemChild4);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('img', 'testimonials__carousel-item--image', '');
-    elemChild3.setAttribute('src', '../images/img/person-testimonial.png');
+    elemChild3 = createTag('img', 'testimonials__carousel-item--image');
+    elemChild3.setAttribute('src', jsonResponse.pages[0].section[4].item[0].imageLink);
     elemChild2.append(elemChild3);
     elemChild.append(elemChild2);
     elem.append(elemChild);
@@ -354,9 +350,9 @@ function createBannerPrologBlock() {
 
     //  baseElem = deleteHtmlBlock('contact-us');
     fragment = new DocumentFragment();
-    elem = createTag('h2', 'contact-us__title', 'Contact us');
+    elem = createTag('h2', 'contact-us__title', jsonResponse.pages[0].section[5].title);
     fragment.append(elem);
-    elem = createTag('h5', 'contact-us__text', 'Put there articles successfully special warrant submit agree what along then');
+    elem = createTag('h5', 'contact-us__text', jsonResponse.pages[0].section[5].text);
     fragment.append(elem);
     elem = createTag('div', 'footer__social-block container');
     elemChild = createTag('a', 'footer__social-block__item footer__social-block__item--facebook');
@@ -372,27 +368,25 @@ function createBannerPrologBlock() {
     elem = createTag('div', 'contact-us__wrapper');
     elemChild = createTag('div', 'contact-us__next-step container');
     elemChild2 = createTag('div', 'contact-us__next-step-block');
-    elemChild3 = createTag('h2', 'contact-us__next-step-title', 'What will be next step?');
+    elemChild3 = createTag('h2', 'contact-us__next-step-title', jsonResponse.pages[0].section[5].asideBlock.asideBlockTitle);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('ol', 'contact-us__list', '');
-    elemChild4 = createTag('li', 'contact-us__list-item', '');
-    elemChild5 = createTag('h4', 'contact-us__list-item--title', 'We’ll prepare a proposal');
+    elemChild3 = createTag('ol', 'contact-us__list');
+    elemChild4 = createTag('li', 'contact-us__list-item');
+    elemChild5 = createTag('h4', 'contact-us__list-item--title', jsonResponse.pages[0].section[5].asideBlock.asideBlockItems[0].title);
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('p', 'contact-us__list-item--text', 'Required scope, timeline and apr. price will be included' +
-        '                            if you provide us with detail information about a project.');
-    elemChild4.append(elemChild5);
-    elemChild3.append(elemChild4);
-    elemChild4 = createTag('li', 'contact-us__list-item', '');
-    elemChild5 = createTag('h4', 'contact-us__list-item--title', 'Together we discuss it');
-    elemChild4.append(elemChild5);
-    elemChild5 = createTag('p', 'contact-us__list-item--text', 'Let’s get acquainted and discuss all the possible variant and options. Google Hangouts or Skype usually wirks great.');
+    elemChild5 = createTag('p', 'contact-us__list-item--text', jsonResponse.pages[0].section[5].asideBlock.asideBlockItems[0].text);
     elemChild4.append(elemChild5);
     elemChild3.append(elemChild4);
-    elemChild4 = createTag('li', 'contact-us__list-item', '');
-    elemChild5 = createTag('h4', 'contact-us__list-item--title', 'Let’s start building');
+    elemChild4 = createTag('li', 'contact-us__list-item');
+    elemChild5 = createTag('h4', 'contact-us__list-item--title', jsonResponse.pages[0].section[5].asideBlock.asideBlockItems[1].title);
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('p', 'contact-us__list-item--text', 'When the contract is signed and all goals are set we can' +
-        '                            start the first sprint.');
+    elemChild5 = createTag('p', 'contact-us__list-item--text', jsonResponse.pages[0].section[5].asideBlock.asideBlockItems[1].text);
+    elemChild4.append(elemChild5);
+    elemChild3.append(elemChild4);
+    elemChild4 = createTag('li', 'contact-us__list-item');
+    elemChild5 = createTag('h4', 'contact-us__list-item--title', jsonResponse.pages[0].section[5].asideBlock.asideBlockItems[2].title);
+    elemChild4.append(elemChild5);
+    elemChild5 = createTag('p', 'contact-us__list-item--text', jsonResponse.pages[0].section[5].asideBlock.asideBlockItems[2].text);
     elemChild4.append(elemChild5);
     elemChild3.append(elemChild4);
     elemChild2.append(elemChild3);
@@ -400,49 +394,48 @@ function createBannerPrologBlock() {
     elem.append(elemChild);
 
     elemChild2 = createTag('div', 'contact-us__information');
-    elemChild3 = createTag('h3', 'contact-us__information-title', 'Write us a few words about your project and we will prepare' +
-        '                    proposal for you within 24 hours');
+    elemChild3 = createTag('h3', 'contact-us__information-title', jsonResponse.pages[0].section[5].formBlock.formTitle);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('form', 'contact-us__form', '');
+    elemChild3 = createTag('form', 'contact-us__form');
     elemChild3.setAttribute('id', 'form');
     elemChild3.setAttribute('action', '#');
     elemChild2.append(elemChild3);
     elemChild4 = createTag('fieldset', '');
-    elemChild5 = createTag('label', 'contact-us__form-label', 'Your name');
+    elemChild5 = createTag('label', 'contact-us__form-label', jsonResponse.pages[0].section[5].formBlock.fieldName);
     elemChild5.setAttribute('for', 'name');
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('input', 'contact-us__form-input contact-us__form-input--name', '');
+    elemChild5 = createTag('input', 'contact-us__form-input contact-us__form-input--name');
     elemChild5.setAttribute('id', 'name');
     elemChild5.setAttribute('type', 'text');
     elemChild5.setAttribute('required', '');
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('label', 'contact-us__form-label', 'Email');
+    elemChild5 = createTag('label', 'contact-us__form-label', jsonResponse.pages[0].section[5].formBlock.fieldEmail);
     elemChild5.setAttribute('for', 'email');
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('input', 'contact-us__form-input contact-us__form-input--email', '');
+    elemChild5 = createTag('input', 'contact-us__form-input contact-us__form-input--email');
     elemChild5.setAttribute('id', 'email');
     elemChild5.setAttribute('type', 'email');
     elemChild5.setAttribute('required', '');
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('label', 'contact-us__form-label', 'Password');
+    elemChild5 = createTag('label', 'contact-us__form-label', jsonResponse.pages[0].section[5].formBlock.fieldPassword);
     elemChild5.setAttribute('for', 'email');
     elemChild4.append(elemChild5);
-    elemChild5 = createTag('input', 'contact-us__form-input contact-us__form-input--password', '');
+    elemChild5 = createTag('input', 'contact-us__form-input contact-us__form-input--password');
     elemChild5.setAttribute('id', 'password');
     elemChild5.setAttribute('type', 'password');
     elemChild5.setAttribute('minlength', '8');
     elemChild5.setAttribute('required', '');
     elemChild4.append(elemChild5);
     elemChild3.append(elemChild4);
-    elemChild4 = createTag('button', 'contact-us__form-button', 'Send message');
+    elemChild4 = createTag('button', 'contact-us__form-button', jsonResponse.pages[0].section[5].formBlock.buttonName);
     elemChild3.append(elemChild4);
-    elemChild4 = createTag('p', 'contact-us__form-text', 'If you need to have a DNA first, just contact us at');
-    elemChild5 = createTag('a', 'contact-us__form-text--link', 'email@gmail.com');
+    elemChild4 = createTag('p', 'contact-us__form-text', jsonResponse.pages[0].section[5].formBlock.contactText);
+    elemChild5 = createTag('a', 'contact-us__form-text--link', jsonResponse.pages[0].section[5].formBlock.contactEmail);
     elemChild4.append(elemChild5);
     elemChild3.append(elemChild4);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('div', 'contact-us__map', '');
-    elemChild4 = createTag('img', 'contact-us__map-image', '');
+    elemChild3 = createTag('div', 'contact-us__map');
+    elemChild4 = createTag('img', 'contact-us__map-image');
     elemChild4.setAttribute('src','../images/img/map.png');
     elemChild3.append(elemChild4);
     elemChild2.append(elemChild3);
