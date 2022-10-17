@@ -28,7 +28,7 @@ function createTag(tagName, className_, text = '') {
     return elem;
 }
 
-function createBannerPrologBlock() {
+function createHomePage() {
   //  let baseElem = deleteHtmlBlock('banner-prolog');
     let baseElem = document.getElementById('banner-prolog');
     let fragment = new DocumentFragment();
@@ -37,7 +37,6 @@ function createBannerPrologBlock() {
     let jsonResponse = jsonMock();
 
     //*** create section banner-prolog ***
-
     elem = createTag('h2', 'banner-prolog__title', jsonResponse.pages[0].section[0].title);
     fragment.append(elem);
     elem = createTag('p', 'banner-prolog__text', jsonResponse.pages[0].section[0].text);
