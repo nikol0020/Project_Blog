@@ -356,6 +356,7 @@ body {
 }
 .post__content--replace:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 .post__content--mark {
   border-left: 5px solid #E6E6E6;
@@ -371,7 +372,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding-bottom: 5px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #DCDCDC;
 }
 .post__social__social-block {
   display: flex;
@@ -421,7 +422,7 @@ body {
   margin-bottom: 28px;
 }
 .post-review__container {
-  border-left: 1px solid #dddddd;
+  border-left: 1px solid #DCDCDC;
   position: relative;
   margin-left: 38px;
   padding: 30px 10px 1px 0;
@@ -431,7 +432,7 @@ body {
   width: 14px;
   height: 14px;
   position: absolute;
-  border: 1px solid #dddddd;
+  border: 1px solid #DCDCDC;
   border-radius: 50%;
   left: -9px;
 }
@@ -631,7 +632,7 @@ body {
   border-radius: 5px;
   margin-bottom: 40px;
   cursor: pointer;
-  float: right;
+  transform: translate(280px, 2px);
 }
 .post-aside__latest-post-button--more-post:hover {
   cursor: pointer;
@@ -640,13 +641,13 @@ body {
 }
 .post-aside__title {
   font: 24px/39px "Hind Siliguri SemiBold", "Arial", sans-serif;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #DCDCDC;
 }
 .post-aside__categories-item {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #DCDCDC;
   font-size: 17px;
   font-family: "Hind Siliguri Regular", "Arial", sans-serif;
 }

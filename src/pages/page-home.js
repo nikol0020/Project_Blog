@@ -478,7 +478,7 @@ function createHomePage() {
     return baseElem;
 }
 
-createBannerPrologBlock();
+createHomePage();
 
 
 
