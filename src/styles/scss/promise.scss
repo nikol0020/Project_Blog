@@ -1,0 +1,132 @@
+@import "main";
+
+body {
+  font: 15px/25px $defaultFontText;
+  color: $defaultColorText;
+  box-sizing: border-box;
+}
+
+.header {
+  @include header;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu {
+  @include menu;
+}
+
+.main {
+  min-height: calc(100vh - 150px);
+}
+
+.section-animation {
+
+  &__item {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    max-height: 150px;
+    overflow: hidden;
+    padding: 20px 40px;
+    background-color: #FAEBD7;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    &-img {
+      width: 25%;
+      border-radius: 5px;
+    }
+
+    &-title {
+      font: 20px/32px $defaultFontTitle;
+    }
+
+    &-post {
+      text-align: left;
+      padding-left: 25px;
+    }
+  }
+
+  &__block-buttons {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+  }
+
+  &__button {
+    @include button-light;
+  }
+}
+
+.footer {
+  @include social-web;
+  background-color: $footerBgFill;
+
+  &__container {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.transition-item {
+  // animation-name: animation-item;
+  animation-delay: 2.5s;
+  position: relative;
+  animation: animation-item 2s ease-in-out forwards;
+}
+
+.btn-disable {
+  background-color: #FAEBD7;
+  &:hover {
+    cursor: default;
+    background-color: #FAEBD7;
+    color: #000;
+  }
+}
+
+//                    sass --watch promise.scss:../css/promise.css
+
+
+/*@keyframes animation-item1 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -50vw;
+  }
+  100% {
+    left: -100vw;
+  }
+}*/
+
+@keyframes animation-item {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#progressBar {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #ddd;
+}
+
+#progressBarFill {
+  width: 0;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #DEB888;
+}

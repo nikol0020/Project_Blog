@@ -21,6 +21,10 @@ body {
 .menu {
   @include menu;
 
+  &__list {
+    width: 510px;
+  }
+
   #time {
     &:hover {
       cursor: pointer;
@@ -236,7 +240,6 @@ body {
   &__button {
     @include button-light;
     width: 45px;
-
 
     &--left {
       background: no-repeat url('../../images/icon/icon-arrow.svg') 50%;

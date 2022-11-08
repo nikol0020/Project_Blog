@@ -164,6 +164,8 @@ body {
         height: 52px;
         float: left;
         margin-right: calc($defaultIndent / 2);
+        overflow: hidden;
+        border-radius: 50%;
       }
 
       &__name {

@@ -335,6 +335,8 @@ body {
   height: 52px;
   float: left;
   margin-right: 12.5px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 .blog .post__information__name {
   width: 100%;
