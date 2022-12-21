@@ -11,8 +11,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  width: 100%;
+  width: 1200px;
   padding: 0 20px;
   margin-left: auto;
   margin-right: auto;
@@ -22,7 +21,7 @@ body {
   @include menu;
 
   &__list {
-    width: 510px;
+    width: 630px;
   }
 
   #time {
@@ -35,11 +34,13 @@ body {
 .content__block {
   height: 590px;
   background-image: url("../../images/img/bg-hp.jpg");
+  background-size: cover;
+  width: 1440px;
+  margin: 0 auto;
 }
 
 .banner-prolog {
-  width: 100%;
-  margin-top: 70px;
+  margin-top: 73px;
 
   &__title {
     font: 28px/37px $titleFontSemiBold;
@@ -47,8 +48,8 @@ body {
   }
 
   &__text {
-    max-width: 660px;
-    margin-top: 20px;
+    width: 660px;
+    margin-top: 22px;
     font: 17px/26px $defaultFontText;
   }
 
@@ -62,17 +63,27 @@ body {
   &__button {
     &--explore {
       @include button-dark;
+
+      &:hover {
+        cursor: url(../../images/icon/icons-hand-cursor.svg), pointer;
+      }
     }
 
     &--learn-more {
       @include button-light;
       width: 125px;
+      background-color: transparent;
+
+      &:hover {
+        cursor: url(../../images/icon/icons-hand-cursor.svg), pointer;
+      }
     }
   }
 }
 
 .about-us {
   @include section-title-style;
+  margin-top: 90px;
 
   &__title::before {
     width: 95px;
@@ -82,6 +93,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 1160px;
+    margin-top: 59px;
   }
 
   &__items {
@@ -109,26 +121,59 @@ body {
     }
 
     &--typography {
-      background: linear-gradient(108.56deg, rgba(230, 246, 65, 0.5) 0%, rgba(41, 252, 154, 0.5) 100%);
+      background: linear-gradient(108.56deg, rgba(200, 203, 35, 0.5) 5%, rgba(130, 161, 79, 0.6) 95%);
 
       &::before {
         right: -4px;
+      }
+
+      &::after {
+        content: '';
+        width: 2px;
+        height: 72px;
+        transform: rotate(141deg);
+        background: $defaultFill;
+        position: absolute;
+        top: -12px;
+        right: 12.5px;
       }
     }
 
     &--icon-set {
-      background: linear-gradient(236.77deg, rgba(247, 247, 247, 0.5) 0%, rgba(35, 86, 255, 0.5) 100%);
+      background: linear-gradient(236.77deg, rgba(10, 90, 255, 0.4) 100%, rgba(35, 86, 255, 0.8) 0%);
 
       &::before {
         left: -4px;
       }
+
+      &::after {
+        content: '';
+        width: 2px;
+        height: 72px;
+        transform: rotate(39deg);
+        background: $defaultFill;
+        position: absolute;
+        top: -12px;
+        left: 12.5px;
+      }
     }
 
     &--accurate {
-      background: linear-gradient(236.42deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 9, 9, 0.5) 100%);
+      background: linear-gradient(56.74deg, rgba(255, 20, 25, 0.6) 0%, rgba(200, 20, 3, 0.3) 100%);
 
       &::before {
         right: -4px;
+      }
+
+      &::after {
+        content: '';
+        width: 2px;
+        height: 72px;
+        transform: rotate(141deg);
+        background: $defaultFill;
+        position: absolute;
+        top: -12px;
+        right: 12.5px;
       }
     }
   }
@@ -154,9 +199,10 @@ body {
 
 .latest-post {
   @include section-title-style;
+  margin-top: 61px;
 
   &__title::before {
-    width: 126px;
+    width: 127px;
   }
 
   &__wrapper {
@@ -167,7 +213,7 @@ body {
 
   &__article {
     width: 360px;
-    max-width: 360px;
+    margin-top: 5px;
 
     &-img {
       width: 100%;
@@ -176,7 +222,11 @@ body {
 
     &-title {
       font: 20px/32px $defaultFontTitle;
-      margin-top: 25px;
+      margin-top: 12px;
+    }
+
+    &-text {
+      @include ellipsis;
     }
 
     &-post {
@@ -192,24 +242,77 @@ body {
 
 .latest-portfolio {
   @include section-title-style;
+  //margin-top: 80px;
 
   &__title::before {
-    width: 160px;
+    width: 162px;
   }
 
   &__wrapper {
+    padding: 0;
+    height: 265px;
+    width: 1160px;
+    margin-top: 61px;
+  }
+
+  &__carousel {
+    width: 1160px;
+    height: 245px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__items {
     display: flex;
     justify-content: space-between;
-    padding: 0;
+    width: 1160px;
+    height: 265px;
+    overflow: hidden;
+    position: absolute;
+    transition: all ease 1.5s;
+    padding-left: 10px;
   }
 
   &__item {
+    display: block;
     position: relative;
     border-radius: 5px;
+    width: 370px;
+    height: 245px;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 20px 9px 10px rgb(0 0 0 / 20%);
+      position: relative;
+
+      &::after {
+        content: "";
+        min-width: 100px;
+        min-height: 60px;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        min-width: 60px;
+        min-height: 20px;
+        border-radius: 5px;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-image: url("../../images/icon/icon-attach.svg");
+      }
+    }
 
     &-img {
-      max-width: 360px;
-      height: 240px;
+      width: 100%;
+      height: 245px;
     }
 
     &-theme {
@@ -247,7 +350,8 @@ body {
 
       &:hover {
         background-color: transparent;
-        box-shadow: 5px 5px 5px $colorShadow;
+        box-shadow: 3px -1px 15px $colorShadow;
+        cursor: url(../../images/icon/icons-hand-cursor.svg), pointer;
       }
     }
 
@@ -257,34 +361,41 @@ body {
 
       &:hover {
         background-color: transparent;
-        box-shadow: -5px 5px 5px $colorShadow;
+        box-shadow: -3px -1px 15px $colorShadow;
+        cursor: url(../../images/icon/icons-hand-cursor.svg), pointer;
       }
     }
 
     &--see-all-works {
       width: 135px;
-      margin-top: -10px;
+      margin-top: 105px;
+      background-color: $defaultFill;
+
+      &:hover {
+        cursor: url(../../images/icon/icons-hand-cursor.svg), pointer;
+      }
     }
   }
 }
 
 .testimonials {
   @include section-title-style;
-  padding-top: 80px;
-  margin-top: 20px;
+  padding-top: 79px;
+  margin: 20px auto 0;
   padding-bottom: 80px;
   background: no-repeat url('../../images/img/hc-bg-testimonial.png');
   background-size: cover;
+  width: 1440px;
 
   &__title::before {
-    width: 130px;
+    width: 131px;
   }
 
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 70px;
   }
 
   &__button {
@@ -292,6 +403,8 @@ body {
     width: 45px;
     background-color: $white;
     position: relative;
+    margin-bottom: 15px;
+    z-index: 1;
 
     &:before {
       content: '';
@@ -303,37 +416,57 @@ body {
       left: 0;
     }
 
-
     &--left {
+      margin-right: 30px;
+
       &:before {
         transform: rotate(90deg);
       }
 
       &:hover {
-        background-color: transparent;
-        box-shadow: 5px 5px 5px $colorShadow;
+        background-color: $white;
+        box-shadow: 3px 3px 15px $colorShadow;
+        cursor: url(../../images/icon/icons-hand-cursor.svg), pointer;
       }
     }
 
     &--right {
+      margin-left: 30px;
+
       &:before {
         transform: rotate(-90deg);
       }
 
       &:hover {
-        background-color: transparent;
-        box-shadow: -5px 5px 5px $colorShadow;
+        background-color: $white;
+        box-shadow: -3px 3px 15px $colorShadow;
+        cursor: url(../../images/icon/icons-hand-cursor.svg), pointer;
       }
     }
   }
 
   &__carousel {
-    width: 620px;
+    width: 560px;
     height: 265px;
+    position: relative;
+    overflow: hidden;
 
     &-item {
-      display: flex;
-      justify-content: center;
+      width: 560px;
+      height: 265px;
+      overflow: hidden;
+      position: absolute;
+      transition: all ease 1.2s;
+
+      &--image-container {
+        width: 100%;
+        position: absolute;
+        left: 0;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
 
       &-post {
         width: 280px;
@@ -362,24 +495,27 @@ body {
 
 .contact-us {
   @include section-title-style;
+  width: 1440px;
+  margin: 79px auto 0;
 
   &__title::before {
-    width: 110px;
+    width: 111px;
   }
 
   &__text {
-    margin-bottom: 70px;
+    margin-bottom: 73px;
   }
 
   &__wrapper {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0;
-    margin-top: 20px;
+    margin: 20px auto 0;
     text-align: left;
     background-color: $contactUsBgFill;
     border-bottom: 1px solid $defaultColorBorder;
+    width: 1440px;
+    margin-bottom: -55px;
   }
 
   &__social {
@@ -393,7 +529,7 @@ body {
     &-title {
       font: 24px/39px $titleFontSemiBold;
       color: $colorBorderTitle;
-      margin: 110px 0 50px;
+      margin: 110px 0 40px;
     }
   }
 
@@ -403,8 +539,8 @@ body {
     margin-bottom: 40px;
 
     &-item {
-      margin-left: 15px;
-      max-width: 320px;
+      margin-left: 12px;
+      width: 320px;
       position: relative;
 
       &::before {
@@ -417,7 +553,7 @@ body {
         position: absolute;
         top: 3px;
         left: -51px;
-        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5)
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
       }
 
       &::after {
@@ -438,7 +574,7 @@ body {
 
       &--text {
         font: 15px/26px $defaultFontText;
-        padding-bottom: 25px;
+        padding-bottom: 35px;
         position: relative;
 
         &::before {
@@ -466,10 +602,11 @@ body {
     width: 760px;
     position: relative;
     top: -60px;
-    margin-left: 40px;
+    margin-left: 30px;
+    margin-bottom: 52px;
     border: 1px solid $defaultColorBorder;
     border-radius: 5px;
-    box-shadow: -5px 5px 10px 8px rgb(0 0 0 / 10%);
+    box-shadow: 0 10px 25px 5px rgb(0 0 0 / 20%);
 
     &-title {
       width: 100%;
@@ -478,6 +615,7 @@ body {
       font: 17px/21px $defaultFontTitle;
       padding: 10px 65px 10px 85px;
       position: relative;
+      background-color: $contactUsBgFill;
 
       &::before {
         content: '';
@@ -496,6 +634,31 @@ body {
     height: calc(100% - $heightTitleForm);
     padding: 30px;
     font: 17px/28px $defaultFontText;
+    background-color: $defaultFill;
+
+    &-label {
+      position: relative;
+
+      &--password {
+        &-show {
+          position: absolute;
+          font: 14px/23px $defaultFontText;
+          left: 282px;
+          top: 5px;
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 23px;
+            height: 8px;
+            right: 30px;
+            top: 7px;
+            background-repeat: no-repeat;
+            background-image: url("../../images/icon/icon-hidepass.svg");
+          }
+        }
+      }
+    }
 
     &-input {
       width: 320px;
@@ -504,16 +667,12 @@ body {
       border: none;
       border: 1px solid $colorBorderForm;
       outline: none;
-      margin-bottom: 30px;
+      margin-bottom: 38px;
       font: 17px/28px $defaultFontText;
 
       &:focus {
         border: 1px solid $colorBgDarkButton;
       }
-
-      //&:invalid {
-      //  border: 1px solid $colorBorderError;
-      //}
 
       &:valid {
         font: 17px/28px $defaultFontText;
@@ -524,6 +683,11 @@ body {
       @include button-dark;
       width: 144px;
       margin-bottom: 35px;
+      margin-top: -3px;
+
+      &:hover {
+        cursor: url(../../images/icon/icons-hand-cursor.svg), pointer;
+      }
     }
 
     &-text {
@@ -546,6 +710,9 @@ body {
 .footer {
   @include social-web;
   background-color: $footerBgFill;
+  border: 1px solid $defaultColorBorder;
+  width: 1440px;
+  margin: 0 auto;
 
   &__container {
     height: 70px;
@@ -555,7 +722,10 @@ body {
   }
 }
 
-.carousel {
+* {
+  border-radius: 5px;
+}
+/*.carousel {
   &__container {
     width: 3480px;
     height: 245px;
@@ -608,4 +778,64 @@ body {
 .transition-left {
   animation-name: transition-left;
   animation-duration: 3s;
+}*/
+
+.img.testimonials__carousel-item--image {
+  max-width: 50%;
+  height: 265px;
+  display: block;
+  position: absolute;
+  right: 0;
 }
+
+.img.testimonials__carousel-item1 {
+  min-width: 51%;
+  max-width: 48%;
+  background: $colorBgCarouselPost;
+  height: 265px;
+  position: absolute;
+  z-index: 0;
+  font-family: 'Hind Siliguri Regular';
+  text-align: left;
+  color: $colorTextCarousel;
+  padding: 53px 40px 20px;
+}
+
+.testimonials__carousel-quote {
+  height: 104px;
+  width: 192px;
+  color: $colorTextCarousel;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 26px;
+  font-family: 'Hind Siliguri SemiBold';
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 4px;
+    height: 8px;
+    background-color: $colorTextCarousel;
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    transform: rotate(18deg);
+  }
+
+  &::after {
+    content: "";
+    width: 4px;
+    height: 8px;
+    background-color: $colorTextCarousel;
+    position: absolute;
+    top: -12px;
+    left: -6px;
+    transform: rotate(18deg);
+  }
+}
+
+.testimonials__carousel-author {
+  margin-top: 38px;
+}
+

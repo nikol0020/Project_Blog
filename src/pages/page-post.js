@@ -419,9 +419,6 @@ function createBlogPage() {
         '                wish help call draw side. Girl quit if case mr sing as no have. At none neat am do over will. Polite do' +
         '                object at passed it is.');
     elemChild.append(elemChild2);
-    elemChild2 = createTag('a', 'post-review__item-link--read-less', 'Read more');
-    elemChild2.setAttribute('href', '#');
-    elemChild.append(elemChild2);
     elem.append(elemChild);
     fragment.append(elem);
     elem = createTag('button','post-review__more-comments', 'More comments');
@@ -433,13 +430,16 @@ function createBlogPage() {
     elem = createTag('div', 'footer__container container');
     elemChild = createTag('div', 'footer__social-block');
     elemChild2 = createTag('a', 'footer__social-block__item footer__social-block__item--facebook');
-    elemChild2.setAttribute('href', '../images/icon/icon-facebook.svg');
+    elemChild2.setAttribute('href', 'https://www.facebook.com/');
+    elemChild2.setAttribute('target', '_blank');
     elemChild.append(elemChild2);
     elemChild2 = createTag('a', 'footer__social-block__item footer__social-block__item--instagram');
-    elemChild2.setAttribute('href', '../images/icon/icon-instagram.svg');
+    elemChild2.setAttribute('href', 'https://www.instagram.com');
+    elemChild2.setAttribute('target', '_blank');
     elemChild.append(elemChild2);
     elemChild2 = createTag('a', 'footer__social-block__item footer__social-block__item--dribble');
-    elemChild2.setAttribute('href', '../images/icon/icon-dribble.svg');
+    elemChild2.setAttribute('href', 'https://dribbble.com');
+    elemChild2.setAttribute('target', '_blank');
     elemChild.append(elemChild2);
     elem.append(elemChild);
     elemChild = createTag('div', 'footer__logo','BlogWorld');
@@ -447,8 +447,24 @@ function createBlogPage() {
     elemChild = createTag('div', 'footer__copyright','©2019 All Rights Reserved.');
     elem.append(elemChild);
     elemChild = createTag('div', 'footer__date-wrapper');
-    elemChild2 = createTag('div', 'footer__clock');
+    elemChild2 = createTag('span', 'footer__clock');
     elemChild2.setAttribute('id','clock');
+    elemChild.append(elemChild2);
+
+    elemChild2 = createTag('span', 'footer__clock--hours');
+    elemChild2.setAttribute('id','clock-hours');
+    elemChild.append(elemChild2);
+
+    elemChild2 = createTag('span', 'footer__clock--minutes');
+    elemChild2.setAttribute('id','clock-minutes');
+    elemChild.append(elemChild2);
+
+    elemChild2 = createTag('span', 'footer__clock--seconds');
+    elemChild2.setAttribute('id','clock-seconds');
+    elemChild.append(elemChild2);
+
+    elemChild2 = createTag('span', 'footer__weekDay');
+    elemChild2.setAttribute('id','weekDay');
     elemChild.append(elemChild2);
     elemChild2 = createTag('div', 'footer__date');
     elemChild2.setAttribute('id','date');

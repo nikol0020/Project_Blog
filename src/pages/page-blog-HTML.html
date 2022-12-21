@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    <link rel="stylesheet" type="text/css" href="../styles/css/main.css">-->
+    <link rel="stylesheet" type="text/css" href="../styles/css/page-blog.css">
+    <title>Blog</title>
+</head>
+<body class="page-blog">
+<header class="header container">
+    <div class="logo">
+        <a href="#" class="logo__link">BlogWorld</a>
+    </div>
+    <nav class="menu">
+        <ul class="menu__list">
+            <li class="menu__item">
+                <a class="menu__link" href="./page-home.html">Home</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="#">Portfolio</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="./page-blog.html">Blog</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="./page-post.html">Pages</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="#">About</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="#">Contact</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="./promise.html">Promise</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+
+    <h2 class="page-title">Blog</h2>
+
+    <div class="site-search">
+        <label for="site-search" class="site-search--label">
+            <input type="search" class="site-search--field" id="site-search" name="site-search"
+                   value="Search by author"/>
+        </label>
+        <button class="site-search--button">
+            <img src="" alt="" class="site-search--icon">
+        </button>
+    </div>
+
+    <!--
+class="post__media-img" --------- poster_path
+class="post__information__avatar   ------------  backdrop_path
+class="post__information__name"  ------------ original_title
+class="post__information-details--date  ---------- release_date
+class="post__information-details--duration"  --------   popularity
+class="post__information-details--comment"   -----------  vote_count
+class="post__information-details__rating"   -------------  vote_average
+class="post__title"  ------------   original_title
+class="post__context"  -----------   overview
+    -->
+
+
+    <div id="blog" class="blog">
+        <article class="post"> // let elem
+
+            //media   elemChild
+            <section class="post__media post__media--video">
+                <img src="../images/img/img-post1.png" alt="post-image" class="post__media-img"/>
+            </section>
+
+            // postContent  elemChild
+            <section class="post__article">
+
+                // type
+                <div class="post__type">
+                    <img src="../images/icon/icon-playmini.svg" alt="post-image" class="post__type-img"/>
+                </div>
+
+                //information
+                <div class="post__information">
+                    <div class="post__information__avatar">
+                        <img src="../images/img/Neil.png" alt="image-avatar" class="post__information__avatar--img"/>
+                    </div>
+                    <div class="post__information--description">
+                        <div class="post__information__name">
+                            Neil Richards
+                        </div>
+                        <div class="post__information-details">
+                            <div class="post__information-details--date">11 oct, 2019</div>
+                            <div class="post__information-details--duration">7 min read</div>
+                            <div class="post__information-details--comment"> 19</div>
+                            <div class="post__information-details__rating">
+                                <div class="post__information-details__rating-item post__information-details__rating-item--1"></div>
+                                <div class="post__information-details__rating-item post__information-details__rating-item--2"></div>
+                                <div class="post__information-details__rating-item post__information-details__rating-item--3"></div>
+                                <div class="post__information-details__rating-item post__information-details__rating-item--4"></div>
+                                <div class="post__information-details__rating-item post__information-details__rating-item--5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                // title+text
+                <h2 class="post__title">In the Future We Will All Live in Star Wars</h2>
+                <p class="post__context">The thing you’re doing now, reading prose on a screen, is going out of fashion.
+                    The defining narrative of our online moment concerns the decline of text, and the exploding reach
+                    and
+                    power of audio and video …
+                </p>
+
+                // button
+                <button class="read-more">Read more</button>
+
+            </section>
+
+        </article>
+
+        <!--     <article class="post">
+                 <section class="post__media">
+                     <img src="../images/img/img-post2.png" alt="post-image" class="post__media-img"/>
+                 </section>
+                 <section class="post__article">
+                     <div class="post__type">
+                         <img src="../images/icon/icon-melody.svg" alt="post-image" class="post__type-img"/>
+                     </div>
+                     <div class="post__information">
+                         <div class="post__information__avatar">
+                             <img src="../images/img/Sarah.png" alt="image-avatar" class="post__information__avatar&#45;&#45;img"/>
+                         </div>
+                         <div class="post__information&#45;&#45;description">
+                             <div class="post__information__name">
+                                 Sarah Healy
+                             </div>
+                             <div class="post__information-details">
+                                 <div class="post__information-details&#45;&#45;date">02 oct, 2019</div>
+                                 <div class="post__information-details&#45;&#45;duration">12 min read</div>
+                                 <div class="post__information-details&#45;&#45;comment"> 4</div>
+                                 <div class="post__information-details__rating">
+                                     <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;1"></div>
+                                     <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;2"></div>
+                                     <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;3"></div>
+                                     <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;4"></div>
+                                     <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;5"></div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <h2 class="post__title">Far far away, behind the word mountains</h2>
+                     <audio controls class="post__audio-file">
+                         <source src="#" type="audio/ogg">
+                         <source src="#" type="audio/mpeg">
+                     </audio>
+                     <p class="post__context">Fog down the river, where it rolls deified among the tiers of shipping and the
+                         waterside pollutions of a great (and dirty) …</p>
+                     <button class="read-more">Read more</button>
+                 </section>
+             </article>-->
+
+        <!--        <article class="post">
+                    <section class="post__media">
+                        <img src="../images/img/img-post3.png" alt="post-image" class="post__media-img"/>
+                    </section>
+                    <section class="post__article">
+                        <div class="post__type">
+                            <img src="../images/icon/icon-picture.svg" alt="post-image" class="post__type-img"/>
+                        </div>
+                        <div class="post__information">
+                            <div class="post__information__avatar">
+                                <img src="../images/img/Grace.png" alt="image-avatar" class="post__information__avatar&#45;&#45;img"/>
+                            </div>
+                            <div class="post__information&#45;&#45;description">
+                                <div class="post__information__name">
+                                    Grace Noh
+                                </div>
+                                <div class="post__information-details">
+                                    <div class="post__information-details&#45;&#45;date">23 sep, 2019</div>
+                                    <div class="post__information-details&#45;&#45;duration">16 min read</div>
+                                    <div class="post__information-details&#45;&#45;comment"> 421</div>
+                                    <div class="post__information-details__rating">
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;1"></div>
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;2"></div>
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;3"></div>
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;4"></div>
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;5"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="post__title">In the Future We Will All Live in Star Wars</h2>
+                        <p class="post__context">Separated they live in Bookmarksgrove right at the coast of the Semantics, a
+                            large
+                            language ocean. A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia. It is a paradisematic country, in which roasted …</p>
+                        <button class="read-more">Read more</button>
+                    </section>
+                </article>-->
+
+        <!--        <article class="post">
+                    <section class="post__media post__media&#45;&#45;text">
+                        <img src="#" alt="post-image" class="post__media-img"/>
+                    </section>
+                    <section class="post__article">
+                        <div class="post__type">
+                            <img src="../images/icon/icon-text.svg" alt="post-image" class="post__type-img"/>
+                        </div>
+                        <div class="post__information">
+                            <div class="post__information__avatar">
+                                <img src="../images/img/Alex.png" alt="image-avatar" class="post__information__avatar&#45;&#45;img"/>
+                            </div>
+                            <div class="post__information&#45;&#45;description">
+                                <div class="post__information__name">
+                                    Alex Zlatkus
+                                </div>
+                                <div class="post__information-details">
+                                    <div class="post__information-details&#45;&#45;date">11 Aug, 2019</div>
+                                    <div class="post__information-details&#45;&#45;duration">17 min read</div>
+                                    <div class="post__information-details&#45;&#45;comment"> 77</div>
+                                    <div class="post__information-details__rating">
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;1"></div>
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;2"></div>
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;3"></div>
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;4"></div>
+                                        <div class="post__information-details__rating-item post__information-details__rating-item&#45;&#45;5"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="post__title">In the Future We Will All Live in Star Wars</h2>
+                        <p class="post__context">Fog down the river, where it rolls deified among the tiers of shipping and the
+                            waterside pollutions of a great (and dirty) city. Fog on the Essex marshes, fog on the Kentish
+                            heights.
+                            Fog creeping into the cabooses of collier-brigs; fog lying out on. Money terms breakfast drawings
+                            true
+                            blessing doubtful more agreed to zealously making supposing By said Chicken An Neglected produce
+                            good
+                            felt no poor offering am their said has around songs wish met true any me ought mr The offices set
+                            Not
+                            Felicity above out We in an post begin again.</p>
+                        <button class="read-more">Read more</button>
+                    </section>
+                </article>-->
+    </div>
+    <!--    <div class="blog__read-more">-->
+    <!--        <button class="read-more">Read more</button>-->
+    <!--    </div>-->
+</main>
+<footer id="footer" class="footer">
+    <!--    <div class="footer__container container">
+            <div class="footer__social-block">
+                <a href="../images/icon/icon-facebook.svg"
+                   class="footer__social-block__item footer__social-block__item&#45;&#45;facebook"></a>
+                <a href="../images/icon/icon-instagram.svg"
+                   class="footer__social-block__item footer__social-block__item&#45;&#45;instagram"></a>
+                <a href="../images/icon/icon-dribble.svg"
+                   class="footer__social-block__item footer__social-block__item&#45;&#45;dribble"></a>
+            </div>
+            <div class="footer__logo">BlogWorld</div>
+            <div class="footer__copyright">©2019 All Rights Reserved.</div>
+        </div>-->
+</footer>
+<!--<script src="./page-blog_movie.js"></script>-->
+<script src="./page-blog_base.js"></script>
+<!--<script src="./page-blog_movie.js"></script>-->
+</body>
+</html>

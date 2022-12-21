@@ -6,7 +6,7 @@
       display: inline-block;
       width: 23px;
       height: 23px;
-      margin-right: $defaultIndent;
+      margin-right: 20px;
 
       &--facebook {
         background: url("../../images/icon/icon-facebook.svg") no-repeat;
@@ -30,6 +30,7 @@
   border-radius: 5px;
   margin-bottom: 40px;
   cursor: pointer;
+  font: 15px/25px $defaultFontText;
 
   &:hover {
     cursor: pointer;
@@ -46,6 +47,7 @@
   border: 1px solid $defaultColorText;
   border-radius: 5px;
   cursor: pointer;
+  font: 15px/25px $defaultFontText;
 
   &:hover {
     color: $defaultButtonHoverText;
@@ -59,7 +61,7 @@
 
   &::before {
     content: '';
-    width: 95px;
+    width: 94px;
     height: 8px;
     border: 1px solid $colorBorderTitle;
     border-top: none;
@@ -69,11 +71,36 @@
 }
 
 @mixin section-title-style {
-  margin-top: 75px;
+  margin-top: 79px;
   text-align: center;
 
   &__title {
     @include title-mark;
+
+
+    &-text {
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 3px;
+        height: 8px;
+        border-top: 1px solid $colorBorderTitle;
+        position: absolute;
+        top: 40px;
+        left: -3px;
+      }
+
+      &::after {
+        content: '';
+        width: 3px;
+        height: 8px;
+        border-top: 1px solid $colorBorderTitle;
+        position: absolute;
+        top: 40px;
+        right: -3px;
+      }
+    }
   }
 
   &__text {
@@ -127,6 +154,7 @@
         left: 0;
         top: 5px;
         background-image: url("../../images/icon/icon-comment.svg");
+        background-repeat: no-repeat;
       }
     }
   }
@@ -167,12 +195,11 @@
 
   &__list {
     display: flex;
-    width: 460px;
+    width: 510px;
     justify-content: space-between;
   }
 
   &__item {
-    width: 55px;
     padding: 5px;
     margin: 20px 5px;
     text-align: center;
@@ -191,7 +218,8 @@
     color: $defaultColorText;
     font-size: $fontDefaultSize;
 
-    &:hover {
+    &:hover,
+    &--active {
       font-family: $titleFontSemiBold;
       text-decoration: underline;
     }
@@ -221,4 +249,12 @@
       }
     }
   }
+}
+
+@mixin ellipsis {
+  display: -webkit-box;
+  max-width: 360px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

@@ -32,49 +32,65 @@ function clearItem(item) {
     return item.classList.add('transition-item');
 }
 
+function clearItemLast(item) {
+    return item.classList.add('transition-item--last');
+}
+
 function returnItem(item) {
     return item.classList.remove('transition-item');
 }
 
-function createPromises(qty, delay, itemsFigure, itemsImg, itemsTitle, itemsText){
-    for(let i = 0; i < qty; i++){
-        createPromise(i,(i)*delay, qty, itemsFigure ,itemsImg, itemsTitle, itemsText); //вызов промисов
-    }
-
-    return initialPromise;
+function returnItemLast(item) {
+    return item.classList.remove('transition-item--last');
 }
 
-function createPromise(i, delay, qty, itemsFigure, itemsImg, itemsTitle, itemsText){
-    return new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            setTimeout(()=>{(clearItem(itemsImg[i]))}, delay);
-            setTimeout(()=>{(clearItem(itemsTitle[i]))},delay + 2000);
-            setTimeout(()=>{(clearItem(itemsText[i]))},delay + 4000);
-            setTimeout(()=>{(clearItem(itemsFigure[i]))},delay + 5000);
+function createPromises(qty, delay, itemsFigure, itemsImg, itemsTitle, itemsText) {
+    for (let i = 0; i < qty; i++) {
+        createPromise(i, (i) * delay, qty, itemsFigure, itemsImg, itemsTitle, itemsText); //вызов промисов
+    }
+}
+
+function createPromise(i, delay, qty, itemsFigure, itemsImg, itemsTitle, itemsText) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            setTimeout(() => {
+                (clearItem(itemsImg[i]))
+            }, delay);
+            setTimeout(() => {
+                (clearItem(itemsTitle[i]))
+            }, delay + 2000);
+            setTimeout(() => {
+                (clearItem(itemsText[i]))
+            }, delay + 4000);
+            setTimeout(() => {
+                (clearItemLast(itemsFigure[i]));
+            }, delay + 5000);
             resolve(i);
         }, delay)
     })
-        .then(function (result) {
-            if (i === qty - 1) {
-                setTimeout(()=>{(progressBarForward())},delay + 6000);
-            }
-        })
-        .then(function (result) {
-            if (i === qty - 1) {
-                setTimeout(() => {
-                    for (let j = 0; j < itemsFigure.length; j++) {
-                        returnItem(itemsImg[j]);
-                        returnItem(itemsTitle[j]);
-                        returnItem(itemsText[j]);
-                        returnItem(itemsFigure[j]);
-                    }
-                    btnOne.addEventListener("click", clearOne);
-                    btnAll.addEventListener("click", clearAll);
-                    btnOne.classList.remove('btn-disable');
-                    btnAll.classList.remove('btn-disable');
-                },delay + 7000);
-            }
-        })
+    .then(function (result) {
+        if (i === qty - 1) {
+            setTimeout(() => {
+                (progressBarForward())
+            }, delay + 6000);
+        }
+    })
+    .then(function (result) {
+        if (i === qty - 1) {
+            setTimeout(() => {
+                for (let j = 0; j < itemsFigure.length; j++) {
+                    returnItem(itemsImg[j]);
+                    returnItem(itemsTitle[j]);
+                    returnItem(itemsText[j]);
+                    returnItemLast(itemsFigure[j]);
+                }
+                btnOne.addEventListener("click", clearOne);
+                btnAll.addEventListener("click", clearAll);
+                btnOne.classList.remove('btn-disable');
+                btnAll.classList.remove('btn-disable');
+            }, delay + 7000);
+        }
+    })
 }
 
 function clearOne() {
@@ -159,7 +175,7 @@ function promisePageContent(qty) {
     })
 }
 
-promisePageContent (3);
+promisePageContent(3);
 
 let btnOne = document.querySelector("#btn-one");
 let btnAll = document.querySelector("#btn-all");

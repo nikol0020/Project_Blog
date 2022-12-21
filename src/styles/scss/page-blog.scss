@@ -22,17 +22,21 @@ body {
   @include menu;
 }
 
+main {
+  min-height: calc(100vh - 200px);
+}
+
 .page-title {
+  @include section-title-style;
   font-family: $titleFontSemiBold, 'Arial', sans-serif;
   font-size: $fontTitleSize;
   line-height: 39px;
-  text-align: center;
-  margin-top: 50px;
+  margin-top: 45px;
   position: relative;
 
   &:before {
     content: '';
-    width: 45px;
+    width: 42px;
     height: 8px;
     border: 1px solid $defaultColorText;
     border-top: none;
@@ -41,10 +45,22 @@ body {
   }
 }
 
+.filters {
+  width: 160px;
+  height: 44.5px;
+  border: 1px solid $defaultColorText;
+  border-radius: 5px;
+  padding-left: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .site-search {
   position: relative;
   margin-bottom: 30px;
-  margin-top: 60px;
+  margin-top: 65px;
   text-align: right;
 
   &--label {
@@ -61,12 +77,27 @@ body {
     padding-left: 10px;
   }
 
+  &--button-clear {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 40px;
+    top: 3px;
+    border: 1px solid $defaultColorText;
+    background-color: $defaultFill;
+    background: no-repeat center url("../../images/icon/x_close_delete_icon.svg");
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   &--button {
     width: 20px;
     height: 20px;
     position: absolute;
     right: 15px;
-    top: 11px;
+    top: 3px;
     border: none;
     background-color: $defaultFill;
     background-image: url("../../images/icon/icon-search.svg");
@@ -82,12 +113,13 @@ body {
 
   .post {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
     border-radius: 5px;
     min-height: 380px;
     background-color: $defaultColorBgPost;
     display: flex;
     text-align: left;
+    position: relative;
 
     &__type {
       width: 84px;
@@ -95,19 +127,20 @@ body {
       border: 3px solid $white;
       border-radius: 5px;
       margin-right: -40px;
-      float: right;
       text-align: center;
+      position: absolute;
+      right: 39px;
 
       &-img {
         position: relative;
-        top: calc(50% - 21px);
+        top: calc(50% - 23px);
       }
     }
 
     &__media {
-      max-width: 560px;
-      min-width: 560px;
-      width: 560px;
+      max-width: 290px;
+      min-width: 290px;
+      //width: 560px;
       border-radius: 5px;
       overflow: hidden;
       height: 380px;
@@ -166,10 +199,14 @@ body {
         margin-right: calc($defaultIndent / 2);
         overflow: hidden;
         border-radius: 50%;
+
+        &--img {
+          zoom: 0.25;
+        }
       }
 
       &__name {
-        width: 100%;
+        width: 115%;
         font-weight: 500;
         font-size: 17px;
         font-family: $defaultFontTitle;
@@ -179,13 +216,20 @@ body {
 
     &__title {
       font: 20px/26px $defaultFontTitle;
-      margin-bottom: 20px;
-      margin-top: 40px;
+      margin-bottom: 25px;
+      margin-top: 45px;
     }
 
     &__context {
       min-width: 40%;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+      font: 17px/26px $defaultFontText;
+      max-width: 89%;
+      min-height: 105px;
+    }
+
+    &__audio {
+      margin: 15px 0 -10px;
     }
 
     &__audio-file {
@@ -204,7 +248,7 @@ body {
       background-color: $defaultButtonHoverFill;
 
       &:hover {
-        cursor: pointer;
+        cursor: url(../../images/icon/icons-hand-cursor.svg), pointer;
         color: $defaultButtonHoverFill;
         background-color: $defaultButtonHoverText;
       }
@@ -219,6 +263,8 @@ body {
 .footer {
   @include social-web;
   background-color: $footerBgFill;
+  max-width: 1440px;
+  margin: 0 auto;
 
   &__container {
     height: 70px;

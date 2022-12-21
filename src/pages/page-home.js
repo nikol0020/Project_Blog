@@ -29,7 +29,7 @@ function createTag(tagName, className_, text = '') {
 }
 
 function createHomePage() {
-  //  let baseElem = deleteHtmlBlock('banner-prolog');
+    //  let baseElem = deleteHtmlBlock('banner-prolog');
     let baseElem = document.getElementById('banner-prolog');
     let fragment = new DocumentFragment();
     let elem;
@@ -38,6 +38,8 @@ function createHomePage() {
 
     //*** create section banner-prolog ***
     elem = createTag('h2', 'banner-prolog__title', jsonResponse.pages[0].section[0].title);
+    // elemChild = createTag('span', 'banner-prolog__title-text', jsonResponse.pages[0].section[0].title);
+    // elem.append(elemChild);
     fragment.append(elem);
     elem = createTag('p', 'banner-prolog__text', jsonResponse.pages[0].section[0].text);
     fragment.append(elem);
@@ -56,7 +58,9 @@ function createHomePage() {
 
     //baseElem = deleteHtmlBlock('about-us');
     fragment = new DocumentFragment();
-    elem = createTag('h2', 'about-us__title', jsonResponse.pages[0].section[1].title);
+    elem = createTag('h2', 'about-us__title');
+    elemChild = createTag('span', 'about-us__title-text', jsonResponse.pages[0].section[1].title);
+    elem.append(elemChild);
     fragment.append(elem);
     elem = createTag('h5', 'about-us__text', jsonResponse.pages[0].section[1].text);
     fragment.append(elem);
@@ -65,30 +69,30 @@ function createHomePage() {
     elemChild = createTag('div', 'about-us__items');
     elem.append(elemChild);
     elemChild2 = createTag('figure', 'about-us__item about-us__item--typography');
-    elemChild3 = createTag('img', '', '');
+    elemChild3 = createTag('img', 'about-us__item-image', '');
     elemChild3.setAttribute('src', jsonResponse.pages[0].section[1].items[0].itemLink);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('figcaption', '', jsonResponse.pages[0].section[1].items[0].itemName);
+    elemChild3 = createTag('figcaption', 'about-us__item-text', jsonResponse.pages[0].section[1].items[0].itemName);
     elemChild2.append(elemChild3);
     elemChild.append(elemChild2);
     elem.append(elemChild);
     fragment.append(elem);
 
     elemChild2 = createTag('figure', 'about-us__item about-us__item--icon-set');
-    elemChild3 = createTag('img', '', '');
+    elemChild3 = createTag('img', 'about-us__item-image', '');
     elemChild3.setAttribute('src', jsonResponse.pages[0].section[1].items[1].itemLink);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('figcaption', '', jsonResponse.pages[0].section[1].items[0].itemName);
+    elemChild3 = createTag('figcaption', 'about-us__item-text', jsonResponse.pages[0].section[1].items[1].itemName);
     elemChild2.append(elemChild3);
     elemChild.append(elemChild2);
     elem.append(elemChild);
     fragment.append(elem);
 
     elemChild2 = createTag('figure', 'about-us__item about-us__item--accurate');
-    elemChild3 = createTag('img', '', '');
+    elemChild3 = createTag('img', 'about-us__item-image', '');
     elemChild3.setAttribute('src', jsonResponse.pages[0].section[1].items[2].itemLink);
     elemChild2.append(elemChild3);
-    elemChild3 = createTag('figcaption', '', jsonResponse.pages[0].section[1].items[1].itemName);
+    elemChild3 = createTag('figcaption', 'about-us__item-text', jsonResponse.pages[0].section[1].items[2].itemName);
     elemChild2.append(elemChild3);
     elemChild.append(elemChild2);
     elem.append(elemChild);
@@ -101,9 +105,11 @@ function createHomePage() {
 
     //*** create section latest-post ***
 
-  //  baseElem = deleteHtmlBlock('latest-post');
+    //  baseElem = deleteHtmlBlock('latest-post');
     fragment = new DocumentFragment();
-    elem = createTag('h2', 'latest-post__title', jsonResponse.pages[0].section[2].title);
+    elem = createTag('h2', 'latest-post__title');
+    elemChild = createTag('span', 'latest-post__title-text', jsonResponse.pages[0].section[2].title);
+    elem.append(elemChild);
     fragment.append(elem);
     elem = createTag('h5', 'latest-post__text', jsonResponse.pages[0].section[2].text);
     fragment.append(elem);
@@ -155,7 +161,7 @@ function createHomePage() {
 
     elemChild = createTag('figure', 'latest-post__article');
     elemChild2 = createTag('img', 'latest-post__article-img');
-    elemChild2.setAttribute('src',  jsonResponse.pages[0].section[2].articles[2].articleImage);
+    elemChild2.setAttribute('src', jsonResponse.pages[0].section[2].articles[2].articleImage);
     elemChild.append(elemChild2);
     elemChild2 = createTag('figcaption', 'latest-post__article-post', '');
     elemChild3 = createTag('h2', 'latest-post__article-title', jsonResponse.pages[0].section[2].articles[2].articleTitle);
@@ -182,11 +188,11 @@ function createHomePage() {
     //*** create section latest-portfolio ***
 
     //  baseElem = deleteHtmlBlock('portfolio');
-    fragment = new DocumentFragment();
-    elem = createTag('h2', 'latest-portfolio__title', jsonResponse.pages[0].section[3].title);
-    fragment.append(elem);
-    elem = createTag('h5', 'latest-portfolio__text', jsonResponse.pages[0].section[3].text);
-    fragment.append(elem);
+    /*    fragment = new DocumentFragment();
+        elem = createTag('h2', 'latest-portfolio__title', jsonResponse.pages[0].section[3].title);
+        fragment.append(elem);
+        elem = createTag('h5', 'latest-portfolio__text', jsonResponse.pages[0].section[3].text);
+        fragment.append(elem);*/
 
     // commented block with carousel items
     /*    elem = createTag('div', 'latest-portfolio__wrapper carousel__wrapper', '');
@@ -310,40 +316,40 @@ function createHomePage() {
         elemChild.append(elemChild2);
         elem.append(elemChild);
         fragment.append(elem);*/
-    baseElem = document.getElementById('portfolio');
-    baseElem.prepend(fragment);
+    /*    baseElem = document.getElementById('portfolio');
+        baseElem.prepend(fragment);*/
 
     //*** create section testimonials ***
 
     //  baseElem = deleteHtmlBlock('testimonials');
-    fragment = new DocumentFragment();
-    elem = createTag('h2', 'testimonials__title', jsonResponse.pages[0].section[4].title);
-    fragment.append(elem);
-    elem = createTag('div', 'testimonials__wrapper');
-    elemChild = createTag('button', 'testimonials__button testimonials__button--left');
-    elem.append(elemChild);
-    elemChild = createTag('div', 'testimonials__carousel');
-    elemChild2 = createTag('figure', 'testimonials__carousel-item');
-    elemChild3 = createTag('figcaption', 'testimonials__carousel-item-post');
-    elemChild4 = createTag('p', 'testimonials__carousel-item-post--text');
-    elemChild5 = createTag('q', '', jsonResponse.pages[0].section[4].item[0].quote);
-    elemChild4.append(elemChild5);
-    elemChild3.append(elemChild4);
-    elemChild4 = createTag('p', 'testimonials__carousel-item-post--name', jsonResponse.pages[0].section[4].item[0].name);
-    elemChild3.append(elemChild4);
-    elemChild4 = createTag('p', 'testimonials__carousel-item-post--specialization', jsonResponse.pages[0].section[4].item[0].specialization);
-    elemChild3.append(elemChild4);
-    elemChild2.append(elemChild3);
-    elemChild3 = createTag('img', 'testimonials__carousel-item--image');
-    elemChild3.setAttribute('src', jsonResponse.pages[0].section[4].item[0].imageLink);
-    elemChild2.append(elemChild3);
-    elemChild.append(elemChild2);
-    elem.append(elemChild);
-    elemChild = createTag('button', 'testimonials__button testimonials__button--right');
-    elem.append(elemChild);
-    fragment.append(elem);
-    baseElem = document.getElementById('testimonials');
-    baseElem.prepend(fragment);
+    // fragment = new DocumentFragment();
+    // elem = createTag('h2', 'testimonials__title', jsonResponse.pages[0].section[4].title);
+    // fragment.append(elem);
+    // elem = createTag('div', 'testimonials__wrapper');
+    // elemChild = createTag('button', 'testimonials__button testimonials__button--left');
+    // elem.append(elemChild);
+    // elemChild = createTag('div', 'testimonials__carousel');
+    // elemChild2 = createTag('figure', 'testimonials__carousel-item');
+    // elemChild3 = createTag('figcaption', 'testimonials__carousel-item-post');
+    // elemChild4 = createTag('p', 'testimonials__carousel-item-post--text');
+    // elemChild5 = createTag('q', '', jsonResponse.pages[0].section[4].item[0].quote);
+    // elemChild4.append(elemChild5);
+    // elemChild3.append(elemChild4);
+    // elemChild4 = createTag('p', 'testimonials__carousel-item-post--name', jsonResponse.pages[0].section[4].item[0].name);
+    // elemChild3.append(elemChild4);
+    // elemChild4 = createTag('p', 'testimonials__carousel-item-post--specialization', jsonResponse.pages[0].section[4].item[0].specialization);
+    // elemChild3.append(elemChild4);
+    // elemChild2.append(elemChild3);
+    // elemChild3 = createTag('img', 'testimonials__carousel-item--image');
+    // elemChild3.setAttribute('src', jsonResponse.pages[0].section[4].item[0].imageLink);
+    // elemChild2.append(elemChild3);
+    // elemChild.append(elemChild2);
+    // elem.append(elemChild);
+    // elemChild = createTag('button', 'testimonials__button testimonials__button--right');
+    // elem.append(elemChild);
+    // fragment.append(elem);
+    // baseElem = document.getElementById('testimonials');
+    // baseElem.prepend(fragment);
 
     //*** create section contact-us ***
 
@@ -451,25 +457,44 @@ function createHomePage() {
     elem = createTag('div', 'footer__container container');
     elemChild = createTag('div', 'footer__social-block');
     elemChild2 = createTag('a', 'footer__social-block__item footer__social-block__item--facebook');
-    elemChild2.setAttribute('href', '../images/icon/icon-facebook.svg');
+    elemChild2.setAttribute('href', 'https://www.facebook.com/');
+    elemChild2.setAttribute('target', '_blank');
     elemChild.append(elemChild2);
     elemChild2 = createTag('a', 'footer__social-block__item footer__social-block__item--instagram');
-    elemChild2.setAttribute('href', '../images/icon/icon-instagram.svg');
+    elemChild2.setAttribute('href', 'https://www.instagram.com');
+    elemChild2.setAttribute('target', '_blank');
     elemChild.append(elemChild2);
     elemChild2 = createTag('a', 'footer__social-block__item footer__social-block__item--dribble');
-    elemChild2.setAttribute('href', '../images/icon/icon-dribble.svg');
+    elemChild2.setAttribute('href', 'https://dribbble.com');
+    elemChild2.setAttribute('target', '_blank');
     elemChild.append(elemChild2);
     elem.append(elemChild);
-    elemChild = createTag('div', 'footer__logo','BlogWorld');
+    elemChild = createTag('div', 'footer__logo', 'BlogWorld');
     elem.append(elemChild);
-    elemChild = createTag('div', 'footer__copyright','©2019 All Rights Reserved.');
+    elemChild = createTag('div', 'footer__copyright', '©2019 All Rights Reserved.');
     elem.append(elemChild);
     elemChild = createTag('div', 'footer__date-wrapper');
-    elemChild2 = createTag('div', 'footer__clock');
-    elemChild2.setAttribute('id','clock');
+    elemChild2 = createTag('span', 'footer__clock');
+    elemChild2.setAttribute('id', 'clock');
+    elemChild.append(elemChild2);
+
+    elemChild2 = createTag('span', 'footer__clock--hours');
+    elemChild2.setAttribute('id', 'clock-hours');
+    elemChild.append(elemChild2);
+
+    elemChild2 = createTag('span', 'footer__clock--minutes');
+    elemChild2.setAttribute('id', 'clock-minutes');
+    elemChild.append(elemChild2);
+
+    elemChild2 = createTag('span', 'footer__clock--seconds');
+    elemChild2.setAttribute('id', 'clock-seconds');
+    elemChild.append(elemChild2);
+
+    elemChild2 = createTag('span', 'footer__weekDay');
+    elemChild2.setAttribute('id', 'weekDay');
     elemChild.append(elemChild2);
     elemChild2 = createTag('div', 'footer__date');
-    elemChild2.setAttribute('id','date');
+    elemChild2.setAttribute('id', 'date');
     elemChild.append(elemChild2);
     elem.append(elemChild);
     fragment.append(elem);
@@ -479,6 +504,35 @@ function createHomePage() {
 }
 
 createHomePage();
+/*validationForm();
 
+
+function validationForm() {
+    let elemForm = document.getElementById('form');
+    let btnForm = elemForm.querySelector('.contact-us__form-button');
+    let nameField = elemForm.querySelector('.contact-us__form-input--name');
+    let emailField = elemForm.querySelector('.contact-us__form-input--email');
+    let passwordField = elemForm.querySelector('.contact-us__form-input--password');
+    let arrFields = elemForm.querySelectorAll('.contact-us__form-input');
+
+    elemForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        console.log('clicked nameField', nameField.value);
+        console.log('clicked emailField', emailField.value);
+        console.log('clicked passwordField', passwordField.value);
+
+        arrFields.forEach( (item) => {
+            if (!item.value) {
+                console.log('item.value empty');
+                let error = document.createElement('div');
+                error.className = 'error';
+                error.style.color = 'red';
+                error.innerHTML = 'Cannot be blank';
+                item.parentElement.insertBefore(error, item);
+            }
+        })
+    })
+}*/
 
 
